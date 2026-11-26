@@ -1,6 +1,28 @@
-# gameoff-shift
+# The Handover Experiment (인수인계 실험)
 
-GitHub Game Off 2026 (주제 SHIFT) 출품작의 서버 뼈대입니다. 한 건물을 여러 플레이어가 교대 근무로 이어서 진행합니다. 한 번에 한 명만 근무하고, 나머지는 실시간으로 관전합니다.
+**GitHub Game Off 2026 entry · theme: SHIFT**
+
+A live relay puzzle platformer. Everyone who opens the game shares **one building**. Only one person works at a time: a **60-second shift**. Everyone else waits in the control room and watches.
+
+- **Pick your equipment at clock-in.** Choose from the access card, walking assist, light, echo recorder, phase shifter or control desk. Each one passes a different obstacle and sees things the others cannot.
+- **You cannot talk.** You hand over with a **hand-drawn note** left where you clocked out, or with numbered directive pins from the control desk.
+- **The room stays as you left it.** The next worker, often a stranger, starts from your crates, your fallen grates, your half-finished code.
+- **An overseer AI watches it all.** It keeps the shift log, refuses bad handovers and occasionally lies. It is running the experiment for a reason.
+- **13 rooms:** labs 1–6, each with a second stage that twists its mechanic, plus the exit. Once a room is cleared it is archived for good. The whole run is shared by every player during the jam.
+- **Two views of the same room:** the white-collar control console (a flat blueprint with a small CCTV) and the blue-collar field (3D, close behind the worker).
+- **Languages and sound:** Korean, English, Japanese and Simplified Chinese. All sound is synthesized in code with the Web Audio API.
+
+**Play:** on itch.io (link on the jam page). **Tech:** a vanilla JS client with Three.js, and a Cloudflare Workers + Durable Objects (SQLite) server, all on the free tier.
+
+**AI disclosure:** this project was built with heavy use of generative AI (Claude) for code, text and dialogue, and the code that synthesizes the sounds. The 3D models (Kenney, Quaternius, CC0) and the font (Galmuri, OFL) are third-party assets; see below.
+
+The rest of this README and the design docs in `docs/` are in Korean.
+
+---
+
+## 한국어
+
+GitHub Game Off 2026 (주제 SHIFT) 출품작입니다. 한 건물을 여러 플레이어가 교대 근무로 이어서 진행합니다. 한 번에 한 명만 근무하고, 나머지는 실시간으로 관전합니다.
 
 스토리와 퍼즐 구조는 [docs/concept.md](docs/concept.md)에 있습니다. 지금은 실험실 1~6, 공정 2 방 여섯(1-2~6-2), 마지막 「퇴근」까지 방 13개가 있습니다. 방마다 설계는 [docs/level-design.md](docs/level-design.md), 캠페인 규칙은 [docs/campaign.md](docs/campaign.md)에 있습니다.
 
