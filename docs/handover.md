@@ -29,6 +29,14 @@
 - **다음 묶음에 고칠 작은 것:** 영어 상단 HUD 상태 문구가 길어 잘림("No worker on sh…"), 상단 HUD에 「녹화 재생」 버튼이 뜨면 연결 상태 글자가 밀려 안 보임(전부터 있던 배치).
 - **itch 파일 교체 요령:** Upload files 버튼은 파일 창을 띄우므로, 페이지에서 `HTMLInputElement.prototype.click`을 잠시 막고 버튼을 눌러 생긴 file input에 Claude in Chrome `file_upload`로 넣는다. 같은 이름 zip은 기존 파일을 대체한다. 그 뒤 "played in the browser" 체크 → Save.
 
+## 1.9 2026-11-27 새벽: 공개와 Game Off 제출 (완료)
+
+- **GitHub:** `Parkjoungwan/shift` 공개. README 맨 위에 영문 소개, 설명과 주제 태그(game-off 등).
+- **운영 건물:** 4회차, 실험실 1부터 새로 엶(`/admin/api/config {lab:1, reopen:true, tier:1, stages:2}`).
+- **itch 페이지 (공개):** 제목 The Handover Experiment(주소는 `nonoiseplz.itch.io/handover-shift-test` 그대로), 짧은 소개(120자 제한 주의), 영문+한국어 설명, 장르 Puzzle, 태그 8개, 표지·스크린샷 5장(`dist/itch-page/`, git 제외), AI 고지(Text·Code·Sounds, 사용 설명문).
+- **잼 제출:** https://itch.io/jam/game-off-2026/rate/5366815 . 저장소 URL, 설명, 주제 해석, AI 사용(코드·소리·글·기획·테스트, 정도 "Almost everything").
+- **itch 편집 함정:** 저장 버튼이 아무 말 없이 실패할 때가 있음(예: 짧은 소개 120자 초과). 원인은 폼을 `fetch(form.action, {method:'POST', body:new FormData(form), headers:{'X-Requested-With':'XMLHttpRequest'}})`로 보내 보면 JSON `errors`로 나옴.
+
 ## 1.8 11-19 ~ 11-26: 건물 시계, 실험실 6·6-2 (배포 안 함)
 
 - **건물 표준시 (11-19):** HUD 시계가 모든 근무자에게 같은 UTC 시각(`i18n.js` `siteClock`)을 보여 줍니다. 실험실 4 전광판과 관제 도면의 도착 표시는 남은 초가 아니라 이 시계의 시각입니다.
