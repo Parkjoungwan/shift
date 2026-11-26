@@ -1,0 +1,7 @@
+/* Galmuri 2.40.3 by Lee Minseo (quiple), SIL Open Font License 1.1 (see OFL-Galmuri.txt).
+   Unmodified files from the npm package "galmuri" (dist/), served with the game so it needs no CDN.
+   Only the four faces the game uses; bold is synthesised. Source: https://github.com/quiple/galmuri */
+@font-face { font-family: Galmuri7; src: url("./Galmuri7.woff2") format("woff2"); font-display: swap; }
+@font-face { font-family: Galmuri9; src: url("./Galmuri9.woff2") format("woff2"); font-display: swap; }
+@font-face { font-family: Galmuri11; src: url("./Galmuri11.woff2") format("woff2"); font-display: swap; }
+@font-face { font-family: GalmuriMono9; src: url("./GalmuriMono9.woff2") format("woff2"); font-display: swap; }

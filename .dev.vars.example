@@ -1,0 +1,8 @@
+# Copy to .dev.vars for local development. Never commit .dev.vars.
+# In production set these with: npx wrangler secret put ADMIN_TOKEN
+ADMIN_TOKEN=change-me
+# Optional: Discord webhook that receives a message on every new report.
+DISCORD_WEBHOOK=
+
+# local development: let localhost pages and the tests connect (production allows only itch.io)
+ALLOWED_ORIGINS=*

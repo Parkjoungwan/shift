@@ -1,0 +1,17 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "gameoff-shift",
+  "main": "src/index.ts",
+  "compatibility_date": "2025-10-01",
+  "assets": { "directory": "./public", "binding": "ASSETS" },
+  "durable_objects": {
+    "bindings": [{ "name": "BUILDING", "class_name": "Building" }]
+  },
+  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["Building"] }],
+  "vars": {
+    // Comma-separated origins allowed to open the game WebSocket. "*" allows any.
+    // Production: only the itch.io game frame. Local development opens it up in .dev.vars
+    // (ALLOWED_ORIGINS=*), which wrangler dev reads over these vars.
+    "ALLOWED_ORIGINS": "https://html-classic.itch.zone"
+  }
+}

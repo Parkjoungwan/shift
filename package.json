@@ -1,0 +1,25 @@
+{
+  "name": "gameoff-shift",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev --port 8787",
+    "deploy": "wrangler deploy",
+    "typecheck": "tsc --noEmit",
+    "smoke": "node test/smoke.mjs",
+    "campaign": "node test/campaign.mjs",
+    "test:lab": "node test/i18n.test.mjs && node test/badge.test.mjs && node test/labs.test.mjs && node test/lab1.test.mjs && node test/lab11.test.mjs && node test/lab2.test.mjs && node test/lab12.test.mjs && node test/lab3.test.mjs && node test/lab13.test.mjs && node test/lab4.test.mjs && node test/lab14.test.mjs && node test/lab5.test.mjs && node test/lab15.test.mjs && node test/lab6.test.mjs && node test/lab9.test.mjs && node test/traps.test.mjs",
+    "vendor": "node scripts/vendor.mjs",
+    "models": "python -I scripts/models.py",
+    "build:itch": "python -I scripts/build-itch.py"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20261115.1",
+    "typescript": "^7.0.2",
+    "wrangler": "^4.162.0"
+  },
+  "dependencies": {
+    "three": "^0.170.0"
+  }
+}

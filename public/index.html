@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>인수인계 실험</title>
+<script type="importmap">
+{ "imports": { "three": "./vendor/three.module.min.js", "three/addons/": "./vendor/addons/" } }
+</script>
+<link rel="stylesheet" href="./fonts/fonts.css">
+<style>
+  /* Everything lives inside #stage, which keeps the game's 640 x 352 shape and fills the window.
+     --u is the stage's scale: 1 at 640 px wide. All UI sizes are multiples of it.
+     Art direction (reports/인디 게임 그래픽 아트 디렉션.md): a 1980s plant control room. Paper
+     forms and ink for the official voice (Galmuri), a dark terminal strip for the machine's voice
+     (GalmuriMono), hand drawing only on the notes. Square corners, hard 1-4 px shadows, no glow,
+     no transparency, no gradients. Colour only for safety meanings. */
+  :root {
+    --u: 1px;
+    --desk:#2a2926; --paper:#e9e4d6; --sheet:#f3efe4; --shade:#d6d0c0; --mid:#a8a59c; --line:#4a4a48; --ink:#1e1e1c;
+    --bar:#16181c; --bartext:#d9d1bf; --phos:#cfe3c4;
+    --red:#c8402e; --yellow:#e8b830; --blue:#2f5fa8; --green:#3f8f4a; --seal:#b8302a;
+    --f-paper: Galmuri9, "Malgun Gothic", sans-serif;
+    --f-title: Galmuri11, "Malgun Gothic", sans-serif;
+    --f-mono: GalmuriMono9, Galmuri9, Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin:0; height:100%; background:#0b0c0f; overflow:hidden; }
+  body { color:var(--ink); font-family:var(--f-paper); -webkit-font-smoothing:none; font-smooth:never; }
+  #stage { position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); font-size:calc(var(--u) * 10); line-height:1.3; overflow:hidden; user-select:none; word-break:keep-all; }
+  canvas { display:block; }
+  /* Two views (docs/two-views.md). #tv holds the live 3D room: full screen for the worker,
+     a small monochrome CCTV window on the console sheet for everyone else. 472/42/0.24375 match console.js LAYOUT. */
+  #console { position:absolute; inset:0; width:100%; height:100%; display:none; image-rendering:pixelated; }
+  #stage.console #console { display:block; }
+  #tv { position:absolute; inset:0; transform-origin:0 0; transition:transform .7s cubic-bezier(.65,0,.25,1); }
+  #stage.console #tv { transform:translate(calc(var(--u) * 472), calc(var(--u) * 42)) scale(0.24375); filter:grayscale(1) contrast(1.25) brightness(1.05); }
+  #stage.cctv #tv::after { content:""; position:absolute; inset:0; pointer-events:none; background-image:repeating-linear-gradient(to bottom, #00000030 0 1px, transparent 1px 3px); }
+  #stage.console #tv::after { background-image:repeating-linear-gradient(to bottom, #00000066 0 4px, transparent 4px 8px); }
+  #gl { position:absolute; inset:0; width:100%; height:100%; background:#0b0c0f; }
+  #view { position:absolute; inset:0; width:100%; height:100%; image-rendering:pixelated; }
+  #stage.flat #gl { display:none; }
+  #stage.flat #view { background:#0b0c0f; }
+  #stage.flat.console #view { background:none; }
+  [hidden] { display:none !important; }
+  /* an industrial accident: one red flash over everything */
+  #stage.accident::after { content:""; position:absolute; inset:0; background:#c8402e; opacity:.4; pointer-events:none; z-index:9; animation:accident .7s steps(4) forwards; }
+  @keyframes accident { to { opacity:0; } }
+  /* a cleared room: a white flash, then the approval seal slams down on the screen (client.js celebrate) */
+  #stage.cleared::after { content:""; position:absolute; inset:0; background:#f4ecd8; opacity:.55; pointer-events:none; z-index:9; animation:accident .35s steps(3) forwards; }
+  #clearStamp { position:absolute; left:50%; top:42%; z-index:12; pointer-events:none; display:flex; flex-direction:column; align-items:center; gap:calc(var(--u) * 4);
+    transform:translate(-50%, -50%); }
+  #clearStamp .seal { width:calc(var(--u) * 92); height:calc(var(--u) * 92); border:calc(var(--u) * 5) solid var(--red); border-radius:50%; color:var(--red);
+    display:flex; flex-direction:column; align-items:center; justify-content:center; font-size:calc(var(--u) * 22); letter-spacing:calc(var(--u) * 2);
+    background:rgba(244,236,216,.08); box-shadow:inset 0 0 0 calc(var(--u) * 2) var(--red); animation:stampIn .5s cubic-bezier(.2,1.6,.4,1) both; }
+  #clearStamp .seal small { font-size:calc(var(--u) * 8); letter-spacing:0; }
+  #clearStamp .label { background:var(--paper); color:var(--ink); border:calc(var(--u) * 1) solid var(--ink); padding:calc(var(--u) * 2) calc(var(--u) * 8);
+    box-shadow:calc(var(--u) * 2) calc(var(--u) * 2) 0 #000; font-size:calc(var(--u) * 10); animation:labelIn .4s .25s steps(4) both; }
+  #clearStamp.out { animation:stampOut .5s steps(5) forwards; }
+  @keyframes stampIn { 0% { transform:scale(2.6) rotate(-24deg); opacity:0; } 55% { transform:scale(.9) rotate(-9deg); opacity:1; } 72% { transform:scale(1.05) rotate(-9deg); } 100% { transform:scale(1) rotate(-9deg); opacity:1; } }
+  @keyframes labelIn { from { transform:translateY(calc(var(--u) * 6)); opacity:0; } to { transform:none; opacity:1; } }
+  @keyframes stampOut { to { opacity:0; } }
+
+  /* controls: printed keys with a hard shadow, pressed by moving into it */
+  button, input, select { font:inherit; color:inherit; }
+  button { background:var(--paper); color:var(--ink); border:calc(var(--u) * 1) solid var(--ink); border-radius:0; padding:calc(var(--u) * 2) calc(var(--u) * 7); cursor:pointer; box-shadow:calc(var(--u) * 2) calc(var(--u) * 2) 0 #000; }
+  button:hover { background:#fffdf6; }
+  button:active { transform:translate(calc(var(--u) * 1), calc(var(--u) * 1)); box-shadow:calc(var(--u) * 1) calc(var(--u) * 1) 0 #000; }
+  button.primary { background:var(--yellow); }
+  button.bad { color:var(--red); }
+  input[type=text] { background:#fffdf6; color:var(--ink); border:calc(var(--u) * 1) solid var(--ink); border-radius:0; padding:calc(var(--u) * 2) calc(var(--u) * 5); width:calc(var(--u) * 92); }
+  .dim { color:#5c5850; }
+
+  /* heads-up display: the machine's terminal strips, top and bottom */
+  .hud { position:absolute; left:0; right:0; display:flex; align-items:center; gap:calc(var(--u) * 6); padding:calc(var(--u) * 3) calc(var(--u) * 6); pointer-events:none; background:var(--bar); color:var(--bartext); font-family:var(--f-mono); }
+  .hud > * { pointer-events:auto; }
+  .hud button { white-space:nowrap; font-family:var(--f-paper); }
+  .hud.top { top:0; height:calc(var(--u) * 22); justify-content:space-between; border-bottom:calc(var(--u) * 1) solid #000; }
+  .hud.bottom { bottom:0; height:calc(var(--u) * 26); justify-content:space-between; border-top:calc(var(--u) * 1) solid #000; }
+  .group { display:flex; align-items:center; gap:calc(var(--u) * 7); min-width:0; }
+  .hud .group > * { white-space:nowrap; flex:none; }
+  .hud.top .group:first-child { flex:1 1 0; overflow:hidden; }
+  .hud.top .group:last-child { flex:1 1 0; justify-content:flex-end; }
+  #conn { flex:0 1 auto !important; overflow:hidden; text-overflow:ellipsis; max-width:calc(var(--u) * 150); }
+  #cam { white-space:nowrap; }
+  #cam::before { content:"■ "; color:var(--red); }
+  #status { color:var(--yellow); }
+  #timer { font-family:var(--f-title); font-size:calc(var(--u) * 12); color:#fff; padding:0 calc(var(--u) * 6); background:#000; }
+  #timer:empty { display:none; }
+  #timer.low { color:#000; background:var(--red); }
+  #conn::before { content:"■ "; color:var(--red); }
+  #conn.on::before { color:var(--green); }
+  #hint { position:absolute; left:50%; bottom:calc(var(--u) * 32); transform:translateX(-50%); color:var(--bartext); background:var(--bar); border:calc(var(--u) * 1) solid #000; font-family:var(--f-mono); padding:calc(var(--u) * 2) calc(var(--u) * 8); transition:opacity .6s; pointer-events:none; white-space:nowrap; }
+  #hint.fade { opacity:0; }
+
+  /* windows inside the game: forms on paper, with an ink title band */
+  .win { position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); background:var(--sheet); color:var(--ink); border:calc(var(--u) * 2) solid var(--ink); border-radius:0; padding:0 calc(var(--u) * 10) calc(var(--u) * 10); box-shadow:calc(var(--u) * 4) calc(var(--u) * 4) 0 #000; max-width:94%; max-height:88%; overflow:auto; z-index:6; }
+  .win h2 { margin:0 calc(var(--u) * -10) calc(var(--u) * 8); padding:calc(var(--u) * 3) calc(var(--u) * 10); font:normal calc(var(--u) * 12)/1.3 var(--f-title); background:var(--ink); color:var(--sheet); }
+  .win h2 .dim { color:var(--mid); }
+  .row { display:flex; flex-wrap:wrap; gap:calc(var(--u) * 7); align-items:center; margin-top:calc(var(--u) * 7); }
+
+  #offerChars { display:flex; gap:calc(var(--u) * 7); }
+  .card { width:calc(var(--u) * 100); text-align:left; padding:calc(var(--u) * 5) calc(var(--u) * 6); background:#fffdf6; border-left-width:calc(var(--u) * 6); }
+  .card b { display:block; font:normal calc(var(--u) * 12)/1.3 var(--f-title); color:var(--ink) !important; margin-bottom:calc(var(--u) * 2); }
+  .card span { color:#5c5850; font-size:calc(var(--u) * 10); }
+
+  #entry { width:calc(var(--u) * 144); height:calc(var(--u) * 36); background:var(--bar); border:calc(var(--u) * 1) solid var(--ink); }
+  #glyphKeys { display:flex; gap:calc(var(--u) * 5); }
+  .glyph { display:flex; flex-direction:column; align-items:center; padding:calc(var(--u) * 2) calc(var(--u) * 4); }
+  .glyph canvas { width:calc(var(--u) * 20); height:calc(var(--u) * 20); }
+  .glyph small { color:#5c5850; font-size:calc(var(--u) * 8); font-family:Galmuri7, var(--f-paper); }
+
+  /* the notes are the one hand-drawn thing on screen */
+  #pad { width:calc(var(--u) * 192); height:calc(var(--u) * 128); background:#f4ecd0; border:calc(var(--u) * 1) solid var(--ink); box-shadow:calc(var(--u) * 2) calc(var(--u) * 2) 0 #000; image-rendering:pixelated; touch-action:none; cursor:crosshair; }
+  #colors { display:flex; gap:calc(var(--u) * 6); }
+  .swatch { width:calc(var(--u) * 16); height:calc(var(--u) * 16); padding:0; border-radius:0; }
+  .swatch.on { outline:calc(var(--u) * 2) solid var(--ink); outline-offset:calc(var(--u) * 2); }
+  #big { width:calc(var(--u) * 168); height:calc(var(--u) * 112); background:#f4ecd0; border:calc(var(--u) * 1) solid var(--ink); image-rendering:pixelated; }
+
+  #credits ul { list-style:none; margin:0; padding:0; max-height:calc(var(--u) * 170); overflow:auto; }
+  #credits li { padding:calc(var(--u) * 2) 0; border-bottom:calc(var(--u) * 1) solid var(--shade); }
+
+  /* shift log drawer: a ledger */
+  #drawer { position:absolute; top:calc(var(--u) * 22); right:0; bottom:calc(var(--u) * 26); width:calc(var(--u) * 216); background:var(--sheet); color:var(--ink); border-left:calc(var(--u) * 2) solid var(--ink); padding:calc(var(--u) * 6) calc(var(--u) * 8); overflow:auto; z-index:5; }
+  #drawer h3 { margin:calc(var(--u) * 8) calc(var(--u) * -8) calc(var(--u) * 3); padding:calc(var(--u) * 1) calc(var(--u) * 8); font:normal calc(var(--u) * 10)/1.3 var(--f-paper); background:var(--ink); color:var(--sheet); }
+  #drawer ul { list-style:none; margin:0; padding:0; }
+  #drawer li { padding:calc(var(--u) * 2) 0; border-bottom:calc(var(--u) * 1) solid var(--shade); display:flex; justify-content:space-between; align-items:baseline; gap:calc(var(--u) * 4); font-size:calc(var(--u) * 10); }
+  #drawer li > span:first-child { flex:1 1 auto; min-width:0; }
+  #drawer li > span:last-child { flex:none; }
+  #drawer li small { color:#5c5850; white-space:nowrap; font-family:Galmuri7, var(--f-paper); font-size:calc(var(--u) * 8); }
+  .link { background:none; border:0; box-shadow:none; padding:0; color:#5c5850; text-decoration:underline; font-size:calc(var(--u) * 8); font-family:Galmuri7, var(--f-paper); }
+
+  #intro { width:calc(var(--u) * 460); }
+  #intro > .dim { font-size:calc(var(--u) * 9); }
+  #intro #nick { width:100%; font:calc(var(--u) * 12)/1.3 var(--f-title); }
+  #langRow { margin-top:0; gap:calc(var(--u) * 4); }
+  #langRow button { padding:calc(var(--u) * 1) calc(var(--u) * 5); font-size:calc(var(--u) * 9); }
+  #langRow button.on { background:var(--ink); color:var(--sheet); }
+  /* the ID badge: a laminated card with a faded photo (badge.js) */
+  #badgeDesk { display:flex; gap:calc(var(--u) * 10); align-items:flex-start; margin-top:calc(var(--u) * 7); }
+  #badge { width:calc(var(--u) * 210); flex:none; background:#efeadc; border:calc(var(--u) * 1) solid var(--ink); box-shadow:calc(var(--u) * 2) calc(var(--u) * 2) 0 #000; }
+  #badge .badgeTop { background:#5d6b6a; color:#efeadc; font-size:calc(var(--u) * 8); font-family:Galmuri7, var(--f-paper); padding:calc(var(--u) * 1) calc(var(--u) * 5); letter-spacing:calc(var(--u) * 1); }
+  #badge .badgeBody { display:flex; gap:calc(var(--u) * 6); padding:calc(var(--u) * 5); }
+  #badgeFace { width:calc(var(--u) * 72); height:calc(var(--u) * 72); flex:none; image-rendering:pixelated; border:calc(var(--u) * 1) solid var(--line); }
+  #badge .badgeInfo { display:flex; flex-direction:column; min-width:0; flex:1; font-size:calc(var(--u) * 9); }
+  #badge .badgeInfo small { color:#7a766c; font-size:calc(var(--u) * 7); font-family:Galmuri7, var(--f-paper); margin-top:calc(var(--u) * 2); }
+  #badge .badgeBar { height:calc(var(--u) * 6); background:repeating-linear-gradient(to right, #6f6a5e 0 calc(var(--u) * 1), transparent calc(var(--u) * 1) calc(var(--u) * 3), #6f6a5e calc(var(--u) * 3) calc(var(--u) * 5), transparent calc(var(--u) * 5) calc(var(--u) * 6)); margin:0 calc(var(--u) * 5) calc(var(--u) * 4); }
+  #lookParts { flex:1; display:flex; flex-direction:column; gap:calc(var(--u) * 5); }
+  #lookParts { min-width:0; }
+  #lookGrid { display:grid; grid-template-columns:1fr 1fr; gap:calc(var(--u) * 3); }
+  .part { min-width:0; }
+  .part { display:flex; align-items:center; justify-content:space-between; background:#fffdf6; border:calc(var(--u) * 1) solid var(--shade); font-size:calc(var(--u) * 8); font-family:Galmuri7, var(--f-paper); }
+  .part .roll { flex:1; min-width:0; text-align:center; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; padding:calc(var(--u) * 2) 0; }
+  .part .roll:hover { background:var(--shade); }
+  .part button { padding:0 calc(var(--u) * 3); box-shadow:none; border:0; background:none; font-size:calc(var(--u) * 8); }
+  .keep { display:inline-block; color:var(--red); border:calc(var(--u) * 1) solid var(--red); padding:0 calc(var(--u) * 2); margin-right:calc(var(--u) * 4); font-size:calc(var(--u) * 8); font-family:Galmuri7, var(--f-paper); transform:rotate(-6deg); }
+  .face { image-rendering:pixelated; display:inline-block; vertical-align:middle; width:calc(var(--u) * 12); height:calc(var(--u) * 12); margin-right:calc(var(--u) * 3); border:calc(var(--u) * 1) solid var(--line); }
+  #who .face { width:calc(var(--u) * 14); height:calc(var(--u) * 14); }
+  /* Galmuri has no kana or hanzi: Japanese and Chinese fall back to a system face per glyph */
+  :root:lang(ja) { --f-paper: Galmuri9, "Yu Gothic UI", "Meiryo", "Hiragino Sans", sans-serif; --f-title: Galmuri11, "Yu Gothic UI", "Meiryo", "Hiragino Sans", sans-serif; --f-mono: GalmuriMono9, Galmuri9, "Yu Gothic UI", "Meiryo", monospace; }
+  :root:lang(zh) { --f-paper: Galmuri9, "Microsoft YaHei UI", "PingFang SC", "Noto Sans SC", sans-serif; --f-title: Galmuri11, "Microsoft YaHei UI", "PingFang SC", "Noto Sans SC", sans-serif; --f-mono: GalmuriMono9, Galmuri9, "Microsoft YaHei UI", "PingFang SC", monospace; }
+  #who:empty { display:none; }
+  /* the overseer speaks from its drone, in the machine's voice */
+  #ai { position:absolute; z-index:4; transform:translate(-50%, -100%); max-width:calc(var(--u) * 240); background:var(--bar); color:var(--phos); border:calc(var(--u) * 1) solid #000; box-shadow:calc(var(--u) * 2) calc(var(--u) * 2) 0 #000; padding:calc(var(--u) * 3) calc(var(--u) * 7); pointer-events:none; font-family:var(--f-mono); }
+  #ai::before { content:var(--ai-who, "감독관> "); color:var(--mid); }
+  #ai::after { content:""; position:absolute; left:50%; bottom:calc(var(--u) * -6); transform:translateX(-50%); border:calc(var(--u) * 5) solid transparent; border-top-color:var(--bar); border-bottom:0; }
+  #ai.top::after { display:none; }
+
+  #toast { position:absolute; left:50%; bottom:calc(var(--u) * 48); transform:translateX(-50%); background:var(--bar); color:var(--bartext); border:calc(var(--u) * 1) solid #000; box-shadow:calc(var(--u) * 2) calc(var(--u) * 2) 0 #000; font-family:var(--f-mono); padding:calc(var(--u) * 3) calc(var(--u) * 10); opacity:0; transition:opacity .15s; pointer-events:none; z-index:8; white-space:nowrap; }
+  #toast.on { opacity:1; }
+
+  /* the controller's tools (docs/two-views.md "관제 근무"): a tool tray */
+  #ctl { position:absolute; left:50%; bottom:calc(var(--u) * 32); transform:translateX(-50%); display:flex; gap:calc(var(--u) * 5); align-items:center; background:var(--sheet); color:var(--ink); border:calc(var(--u) * 2) solid var(--ink); box-shadow:calc(var(--u) * 3) calc(var(--u) * 3) 0 #000; padding:calc(var(--u) * 4) calc(var(--u) * 7); z-index:4; white-space:nowrap; }
+  #ctl button { padding:calc(var(--u) * 1) calc(var(--u) * 6); }
+  #ctl button.on { background:var(--ink); color:var(--sheet); }
+  #ctl .sep { width:calc(var(--u) * 1); align-self:stretch; background:var(--ink); margin:0 calc(var(--u) * 2); }
+  #phrase { width:calc(var(--u) * 340); }
+  #phrase select { background:#fffdf6; color:var(--ink); border:calc(var(--u) * 1) solid var(--ink); border-radius:0; padding:calc(var(--u) * 1) calc(var(--u) * 3); max-width:calc(var(--u) * 150); }
+  #phraseText { margin-top:calc(var(--u) * 8); padding:calc(var(--u) * 5) calc(var(--u) * 8); background:#fffdf6; border:calc(var(--u) * 1) solid var(--ink); box-shadow:calc(var(--u) * 2) calc(var(--u) * 2) 0 var(--ink); font:calc(var(--u) * 12)/1.3 var(--f-title); min-height:calc(var(--u) * 26); }
+
+  /* the archive: a cleared lab replayed on the drawing sheet */
+  #archive { width:calc(var(--u) * 590); max-height:98%; overflow:hidden; }
+  #archive .arcBody { display:flex; gap:calc(var(--u) * 6); align-items:stretch; }
+  #archiveNow { font-size:calc(var(--u) * 9); margin:calc(var(--u) * 2) 0 calc(var(--u) * 4); min-height:calc(var(--u) * 11); }
+  #archiveNow b { font-weight:bold; }
+  /* the roster: every shift worked in the room, who and with what and how it ended */
+  #archiveRoster { list-style:none; margin:0; padding:0; width:calc(var(--u) * 160); height:calc(var(--u) * 229); overflow-y:auto; border:calc(var(--u) * 1) solid var(--ink); background:#fffdf6; }
+  #archiveRoster li { display:grid; grid-template-columns:calc(var(--u) * 5) 1fr auto; gap:calc(var(--u) * 4); align-items:center; padding:calc(var(--u) * 2) calc(var(--u) * 4); border-bottom:calc(var(--u) * 1) solid #ddd6c4; font-size:calc(var(--u) * 8); cursor:pointer; }
+  #archiveRoster li .sw { width:calc(var(--u) * 5); height:calc(var(--u) * 12); border:calc(var(--u) * 1) solid var(--ink); }
+  #archiveRoster li .who { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  #archiveRoster li .who small { color:#5c5850; }
+  #archiveRoster li .end { font-size:calc(var(--u) * 7); color:#5c5850; }
+  #archiveRoster li .end.bad { color:var(--red); }
+  #archiveRoster li .end.ok { color:#2f7a3c; font-weight:bold; }
+  #archiveRoster li.on { background:#fff3c4; outline:calc(var(--u) * 1) solid var(--ink); }
+  #archiveRoster li.untaped { cursor:default; color:#8a8578; }
+  #archiveRoster li.rejected .who { text-decoration:line-through; }
+  /* the run map: an approval ledger, one line per room in order */
+  #runMap { width:calc(var(--u) * 360); }
+  #runList { list-style:none; margin:calc(var(--u) * 6) 0 0; padding:0; border-top:calc(var(--u) * 1) solid var(--ink); }
+  #runList li { display:grid; grid-template-columns:calc(var(--u) * 72) 1fr auto; align-items:center; gap:calc(var(--u) * 6); padding:calc(var(--u) * 3) calc(var(--u) * 4); border-bottom:calc(var(--u) * 1) solid #c9c2b0; font-size:calc(var(--u) * 9); }
+  #runList li .code { font-weight:bold; white-space:nowrap; }
+  #runList li.done .code::after { content:" 승인"; color:var(--red); font-size:calc(var(--u) * 7); border:calc(var(--u) * 1) solid var(--red); border-radius:50%; padding:0 calc(var(--u) * 2); margin-left:calc(var(--u) * 2); }
+  #runList li.now { background:#fff3c4; }
+  #runList li.later { color:#8a8578; }
+  #runList li .meta { color:#5c5850; font-size:calc(var(--u) * 8); }
+  #runList li .crew { color:#3a372f; font-size:calc(var(--u) * 7.5); margin-top:calc(var(--u) * 1); overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  #archiveCanvas { flex:none; width:calc(var(--u) * 416); height:calc(var(--u) * 229); border:calc(var(--u) * 1) solid var(--ink); image-rendering:pixelated; }
+  #archive .row { margin-top:calc(var(--u) * 5); }
+  #archiveStrip { display:flex; flex-wrap:wrap; gap:calc(var(--u) * 2); margin-top:calc(var(--u) * 6); }
+  #archiveStrip .cell { width:calc(var(--u) * 9); height:calc(var(--u) * 12); padding:0; box-shadow:none; border:calc(var(--u) * 1) solid var(--ink); }
+  #archiveStrip .cell.on { outline:calc(var(--u) * 2) solid var(--ink); outline-offset:calc(var(--u) * 1); }
+  #archive .sep { width:calc(var(--u) * 1); align-self:stretch; background:var(--ink); }
+  /* the open room's record (S3): an event strip under the replay, one mark per thing that happened */
+  #arcTrack { display:flex; gap:calc(var(--u) * 6); margin-top:calc(var(--u) * 2); }
+  #arcTrack .trackMain { flex:none; width:calc(var(--u) * 416); }
+  #arcEvents { position:relative; height:calc(var(--u) * 16); border:calc(var(--u) * 1) solid var(--ink); background:#fffdf6; cursor:pointer; overflow:hidden; }
+  #arcEvents .seg { position:absolute; top:0; bottom:0; background:#efe9d8; border-left:calc(var(--u) * 1) solid #c9c2b0; }
+  #arcEvents .seg.alt { background:#e4dcc6; }
+  #arcEvents .mk { position:absolute; transform:translateX(-50%); padding:0; margin:0; border:0; box-shadow:none; background:none; min-width:0; font:calc(var(--u) * 8)/1 var(--f-mono); color:var(--ink); cursor:pointer; }
+  #arcEvents .mk:hover, #arcEvents .mk:active { transform:translateX(-50%); box-shadow:none; outline:calc(var(--u) * 1) solid var(--ink); }
+  #arcEvents .mk.lane0 { top:0; height:calc(var(--u) * 7); }
+  #arcEvents .mk.lane1 { top:calc(var(--u) * 8); height:calc(var(--u) * 7); }
+  #arcEvents .mk.shift { width:calc(var(--u) * 3); border:calc(var(--u) * 1) solid var(--ink); }
+  #arcEvents .mk.on { outline:calc(var(--u) * 1) solid var(--ink); background:#fff3c4; }
+  #arcEvents #arcHead { position:absolute; top:0; bottom:0; width:calc(var(--u) * 1); background:var(--red); pointer-events:none; }
+  #arcEventNow { font-size:calc(var(--u) * 8); min-height:calc(var(--u) * 10); margin-top:calc(var(--u) * 1); overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  #arcLegend { width:calc(var(--u) * 160); font-size:calc(var(--u) * 7); line-height:1.35; }
+  #arcLegend .li { white-space:nowrap; margin-right:calc(var(--u) * 3); }
+  .k.accident, .mk.accident, .mk.bad, .k.stamp, .mk.stamp { color:var(--red); }
+  .k.timeout, .mk.timeout { color:#8a6d10; }
+  .mk.ok { color:#2f7a3c; }
+  .k.swap, .mk.swap { color:#b8860b; }
+  .k.pin, .mk.pin { color:#2f5fa8; }
+  /* my turn came while watching: laid over the top of the window, so nothing below moves */
+  #arcAlert { position:absolute; left:calc(var(--u) * 10); right:calc(var(--u) * 10); top:calc(var(--u) * 22); z-index:1; display:flex; gap:calc(var(--u) * 6); align-items:center; justify-content:space-between; padding:calc(var(--u) * 3) calc(var(--u) * 6); background:var(--red); color:#fff; font-weight:bold; border:calc(var(--u) * 1) solid var(--ink); box-shadow:calc(var(--u) * 2) calc(var(--u) * 2) 0 #000; }
+
+  #peek { position:absolute; z-index:7; pointer-events:none; background:var(--sheet); color:var(--ink); border:calc(var(--u) * 1) solid var(--ink); box-shadow:calc(var(--u) * 3) calc(var(--u) * 3) 0 #000; padding:calc(var(--u) * 4); }
+  #peekTitle, #peekHint { font-size:calc(var(--u) * 8); font-family:Galmuri7, var(--f-paper); color:#5c5850; }
+  #peekHint { text-align:right; margin-top:calc(var(--u) * 2); }
+  #peekCanvas { display:block; width:calc(var(--u) * 144); height:calc(var(--u) * 96); background:#f4ecd0; border:calc(var(--u) * 1) solid var(--ink); }
+</style>
+</head>
+<body>
+<div id="stage">
+  <canvas id="console" width="640" height="352"></canvas>
+  <div id="tv"><canvas id="gl" width="640" height="352"></canvas></div>
+  <canvas id="view" width="640" height="352"></canvas>
+
+  <div class="hud top">
+    <div class="group"><span id="cam">CAM-03 · LAB 3</span><span id="status"></span></div>
+    <span id="timer"></span>
+    <div class="group"><span id="clock" class="dim"></span><span id="conn">연결 중</span><button id="replayBtn" title="지난 근무의 녹화를 처음부터 다시 봅니다" hidden>▶ 녹화 재생</button><button id="roomBtn" title="이 방이 열린 뒤의 근무 녹화를 사건 표시와 함께 열람합니다 (대기·관전 중)" hidden>녹화 대장</button><button id="mapBtn" title="M: 이번 회차의 공정표 (끝낸 방과 기록)">공정표</button><button id="viewBtn" title="V: 도면과 CCTV 바꾸기">CCTV (V)</button><button id="soundBtn" title="소리 켜기 · 끄기">소리</button><button id="logBtn" title="Tab">일지</button></div>
+  </div>
+
+  <div class="hud bottom">
+    <div class="group">
+      <button id="who" title="이름 바꾸기"></button>
+      <button id="join" class="primary">출근 대기</button>
+      <button id="leave" hidden>대기 취소</button>
+    </div>
+    <div class="group">
+      <button id="write" class="primary" hidden title="N: 다음 근무자에게 그림 쪽지 남기기">✎ 쪽지 남기기 (N)</button>
+      <button id="end" hidden>퇴근</button>
+    </div>
+  </div>
+  <div id="hint" hidden>←→ 이동 · Space 점프 · E 조작 · N 쪽지 남기기</div>
+
+  <div id="ctl" hidden>
+    <span class="dim">핀</span>
+    <button data-pin="1">①</button><button data-pin="2">②</button><button data-pin="3">③</button>
+    <span class="sep"></span>
+    <span class="dim">도장 <span id="stampsLeft">3</span></span>
+    <button data-stamp="ok">확인됨</button><button data-stamp="wrong">틀림</button><button data-stamp="old">오래됨</button>
+  </div>
+
+  <div id="phrase" class="win" hidden>
+    <h2 id="phraseTitle">지시문</h2>
+    <div class="dim">감독관 ▸ 정해진 양식으로만 작성하십시오.</div>
+    <div class="row"><select id="tpl1" aria-label="양식"></select><select id="word1" aria-label="단어"></select></div>
+    <label class="row dim"><input type="checkbox" id="more"> 이어 쓰기</label>
+    <div class="row" id="moreRow" hidden><select id="conj" aria-label="접속어"></select><select id="tpl2" aria-label="양식 2"></select><select id="word2" aria-label="단어 2"></select></div>
+    <div id="phraseText"></div>
+    <div class="row">
+      <button id="phraseSend" class="primary">핀 꽂기</button>
+      <button id="phrasePinOnly">글 없이 꽂기</button>
+      <button id="phraseRemove" class="bad">이 핀 뽑기</button>
+      <button id="phraseClose">취소</button>
+    </div>
+  </div>
+
+  <div id="runMap" class="win" hidden>
+    <h2 id="runTitle">공정표</h2>
+    <div class="dim">끝낸 방은 결재되어 기록 보관소에 들어갑니다. 「기록 보기」로 그 방의 근무를 처음부터 빨리감기로 봅니다.</div>
+    <ol id="runList"></ol>
+    <div class="row"><button id="runClose">닫기 (M)</button></div>
+  </div>
+  <div id="ai" hidden></div>
+  <div id="clearStamp" hidden><div class="seal"><span id="clearSeal">승인</span><small id="clearSealSub"></small></div><div class="label" id="clearLabel"></div></div>
+
+  <form id="intro" class="win" hidden>
+    <h2>근무자 등록 신청서 · 인수인계 실험</h2>
+    <div id="langRow" class="row"><span class="dim">Language</span></div>
+    <div class="dim" style="margin-top:calc(var(--u) * 6)">감독관 ▸ 이름을 입력하고 출입증 사진을 찍으십시오. 이 이름과 사진은 근무일지에 영구히 남습니다.</div>
+    <div id="badgeDesk">
+      <div id="badge">
+        <div class="badgeTop">출입증 · 지하 연구 시설</div>
+        <div class="badgeBody">
+          <canvas id="badgeFace" width="72" height="72"></canvas>
+          <div class="badgeInfo">
+            <small>성명</small>
+            <input id="nick" type="text" maxlength="12" placeholder="이름 (12자까지)" aria-label="근무자 이름" autocomplete="off">
+            <small>소속</small><span>인수인계 실험 · 현장 근무</span>
+            <small>근무자 번호</small><span>발급 대기</span>
+          </div>
+        </div>
+        <div class="badgeBar"></div>
+      </div>
+      <div id="lookParts">
+        <div id="lookGrid"></div>
+        <button id="lookRandom" type="button">🎲 전부 무작위</button>
+      </div>
+    </div>
+    <div class="row"><button id="register" class="primary" type="submit">등록</button></div>
+    <div id="introErr" class="row" style="color:var(--bad)" hidden></div>
+    <div class="dim" style="margin-top:calc(var(--u) * 6)">근무는 60초입니다. 근무 중이나 퇴근 뒤 60초 안에 다음 근무자에게 그림 쪽지를 남길 수 있습니다(N 키).</div>
+    <div class="dim">등록하지 않아도 CCTV로 관전할 수 있습니다. 출근하려면 등록해야 합니다.</div>
+    <div class="row"><button id="introSkip" type="button">관전만 하기</button></div>
+  </form>
+
+  <div id="offer" class="win" hidden>
+    <h2>내 차례입니다. 지급 장비를 고르세요 <span id="offerLeft" class="dim"></span></h2>
+    <div id="offerChars"></div>
+    <label id="rejectRow" class="row dim"><input type="checkbox" id="reject"> 인수 거부: 직전 근무를 무효로 하고 시작</label>
+  </div>
+
+  <div id="keypad" class="win" hidden>
+    <h2 id="padTitle">단말기</h2>
+    <canvas id="entry" width="192" height="48"></canvas>
+    <div class="row" id="glyphKeys"></div>
+    <div class="row"><button id="keyBack">지우기</button><button id="keyClose">닫기 (E)</button></div>
+  </div>
+
+  <div id="editor" class="win" hidden>
+    <h2>인수인계 쪽지 · 근무당 1장 <span id="notesLeft" hidden></span>· <span id="editorLeft"></span></h2>
+    <div id="editorWhy" class="dim" style="margin-bottom:calc(var(--u) * 6)"></div>
+    <canvas id="pad" width="384" height="256"></canvas>
+    <div class="row"><div id="colors"></div></div>
+    <div class="row">
+      <button id="noteSend" class="primary">붙이기</button>
+      <button id="noteClear">지우기</button>
+      <button id="noteSkip">버리기</button>
+    </div>
+    <div class="dim" style="margin-top:calc(var(--u) * 4)">마우스로 그리고 「붙이기」. 그려 둔 쪽지는 퇴근하거나 시간이 끝나면 자동으로 붙습니다.</div>
+  </div>
+
+  <div id="detail" class="win" hidden>
+    <h2 id="detailTitle"></h2>
+    <div class="row" style="margin-top:0; flex-wrap:nowrap">
+      <button id="detailPrev" title="이 자리의 이전 쪽지" hidden>◀</button>
+      <canvas id="big" width="288" height="192"></canvas>
+      <button id="detailNext" title="이 자리의 다음 쪽지" hidden>▶</button>
+    </div>
+    <div class="row"><button id="detailStamp" class="primary" hidden></button></div>
+    <div class="row">
+      <button id="reactHelp">도움됨 <span id="helpCount"></span></button>
+      <button id="reactFunny">웃김 <span id="funnyCount"></span></button>
+      <button id="reportNote" class="bad">신고</button>
+      <button id="detailClose">닫기</button>
+    </div>
+  </div>
+
+  <div id="archive" class="win" hidden>
+    <h2 id="archiveTitle">기록 보관소</h2>
+    <div id="archiveNow"></div>
+    <div class="arcBody">
+      <canvas id="archiveCanvas" width="640" height="352"></canvas>
+      <ol id="archiveRoster" aria-label="근무자 명단"></ol>
+    </div>
+    <div id="arcTrack" hidden>
+      <div class="trackMain">
+        <div id="arcEvents" aria-label="사건 표시줄"></div>
+        <div id="arcEventNow" class="dim">표시를 누르면 그 순간으로 갑니다</div>
+      </div>
+      <div id="arcLegend" class="dim"><span class="li"><span class="k accident">■</span> 산재</span> <span class="li"><span class="k timeout">▲</span> 시간 종료</span> <span class="li"><span class="k enter">□</span> 단말기</span> <span class="li"><span class="k swap">◆</span> 기호 교체</span> <span class="li"><span class="k note">✎</span> 쪽지</span> <span class="li"><span class="k pin">▼</span> 핀</span> <span class="li"><span class="k stamp">●</span> 도장</span> <span class="li"><span class="k reset">↺</span> 되돌림</span></div>
+    </div>
+    <div id="arcAlert" hidden><span id="arcAlertText"></span><button id="arcAlertGo" class="primary">장비 고르러 가기</button></div>
+    <div class="row">
+      <button id="arcPrev">◀ 이전 근무</button><button id="arcPlay">일시정지</button><button id="arcNext">다음 근무 ▶</button>
+      <span class="sep"></span>
+      <button data-speed="1">1배</button><button data-speed="8">8배</button><button data-speed="32">32배</button>
+      <button id="arcClose">닫기</button>
+    </div>
+  </div>
+
+  <div id="credits" class="win" hidden>
+    <h2 id="creditsTitle"></h2>
+    <ul id="creditsList"></ul>
+    <div class="dim" style="margin-top:calc(var(--u) * 8); font-size:calc(var(--u) * 8); font-family:Galmuri7, var(--f-paper)">
+      글꼴: 갈무리 Galmuri © Lee Minseo, SIL Open Font License 1.1 (<a href="./fonts/OFL-Galmuri.txt" target="_blank" rel="noopener" style="color:inherit">전문</a>) ·
+      3D 모델: Kenney, Quaternius (CC0)
+    </div>
+    <div class="row"><button id="creditsClose">닫기</button></div>
+  </div>
+
+  <div id="drawer" hidden>
+    <div class="row" style="margin:0; justify-content:space-between"><b>현장 · <span id="dayLabel"></span> · 접속 <span id="viewers">0</span></b><button id="drawerClose">닫기</button></div>
+    <div id="shiftLabel" class="dim">근무자 없음</div>
+    <h3>출근 대기열</h3>
+    <ul id="queue"></ul>
+    <h3>근무일지</h3>
+    <ul id="log"></ul>
+    <h3>기록 보관소</h3>
+    <ul id="archiveList"></ul>
+  </div>
+
+  <div id="peek" hidden><div id="peekTitle"></div><canvas id="peekCanvas" width="288" height="192"></canvas><div id="peekHint">클릭하면 반응·신고</div></div>
+  <div id="toast"></div>
+</div>
+<script type="module" src="client.js"></script>
+</body>
+</html>

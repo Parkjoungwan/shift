@@ -1,0 +1,2466 @@
+{
+ "감독관": [
+  "public/client.js:45",
+  "public/client.js:48",
+  "public/client.js:2030",
+  "public/directives.js:62"
+ ],
+ "익명 근무자": [
+  "public/client.js:48"
+ ],
+ "출근하려면 먼저 근무자 등록을 해 주세요": [
+  "public/client.js:97"
+ ],
+ "쪽지는 근무 중이나 퇴근 후 60초 안에만 붙일 수 있습니다": [
+  "public/client.js:98"
+ ],
+ "이번 근무의 쪽지를 모두 썼습니다": [
+  "public/client.js:99",
+  "public/client.js:1990"
+ ],
+ "쪽지 그림이 너무 크거나 잘못되었습니다": [
+  "public/client.js:100"
+ ],
+ "이 브라우저는 출근과 쪽지 작성이 제한되었습니다": [
+  "public/client.js:101",
+  "public/client.js:178"
+ ],
+ "이번 근무의 도장을 모두 썼습니다": [
+  "public/client.js:102"
+ ],
+ "핀을 꽂을 수 없는 자리입니다": [
+  "public/client.js:103"
+ ],
+ "관제 근무 중에만 할 수 있습니다": [
+  "public/client.js:104"
+ ],
+ "조금 천천히 해 주세요": [
+  "public/client.js:105"
+ ],
+ "이 장비로는 할 수 없습니다": [
+  "public/client.js:106"
+ ],
+ "요청이 너무 잦습니다. 잠시 뒤에 다시 해 주세요": [
+  "public/client.js:107"
+ ],
+ "건물이 폐쇄되었습니다. 기록만 열람할 수 있습니다": [
+  "public/client.js:108"
+ ],
+ "최근 24시간 근무 한도(20번)를 채웠습니다. 쉬는 동안 기록을 둘러보세요": [
+  "public/client.js:109"
+ ],
+ "퇴근": [
+  "public/client.js:111",
+  "public/client.js:598",
+  "public/client.js:1373",
+  "public/console.js:242",
+  "public/directives.js:58",
+  "public/lab9.js:35",
+  "public/lab9.js:378",
+  "public/index.html"
+ ],
+ "실험실 종료": [
+  "public/client.js:111"
+ ],
+ "자리 비움": [
+  "public/client.js:111",
+  "public/client.js:1373"
+ ],
+ "근무 시간 종료": [
+  "public/client.js:111"
+ ],
+ "연결 끊김": [
+  "public/client.js:111",
+  "public/client.js:1373"
+ ],
+ "관리자 조치": [
+  "public/client.js:111",
+  "public/client.js:1373"
+ ],
+ "산재": [
+  "public/client.js:111",
+  "public/client.js:1373",
+  "public/console.js:242",
+  "public/index.html"
+ ],
+ "다른 탭에서 접속해 이 탭은 끊겼습니다": [
+  "public/client.js:149",
+  "public/client.js:282"
+ ],
+ "서버가 붐벼 혼자 모드로 진행합니다 (잠시 뒤 새로고침)": [
+  "public/client.js:152",
+  "public/client.js:277"
+ ],
+ "서버에 다시 연결하지 못해 혼자 모드로 진행합니다": [
+  "public/client.js:157"
+ ],
+ "연결 끊김, 다시 연결 중…": [
+  "public/client.js:158"
+ ],
+ "근무자 {id}번. {equip} 지급. {sec}초는 충분합니다. 통계적으로는요.": [
+  "public/client.js:193"
+ ],
+ "현장이 이전 근무 시작 시점으로 되돌아갔습니다": [
+  "public/client.js:201"
+ ],
+ "이의가 접수되었습니다. 직전 근무자의 결과는 무효입니다.": [
+  "public/client.js:201"
+ ],
+ "쪽지를 붙였습니다. {n}장 더 쓸 수 있습니다": [
+  "public/client.js:226"
+ ],
+ "쪽지를 붙였습니다": [
+  "public/client.js:226"
+ ],
+ "{prev} 공정 {stage} 완료. 다음 공정은 다른 방입니다: {lab}.": [
+  "public/client.js:261"
+ ],
+ "실험실 {from} 종료. 공정표(M)에 결재되었습니다. 실험실 {to}, {lab}.": [
+  "public/client.js:262"
+ ],
+ "인력이 충원되어 검토 절차가 {n}단계로 늘었습니다.": [
+  "public/client.js:263"
+ ],
+ "두 버튼이 동시에 눌리지 않았습니다": [
+  "public/client.js:273"
+ ],
+ "요청이 너무 많아 연결이 끊겼습니다. 혼자 모드로 진행합니다": [
+  "public/client.js:277"
+ ],
+ "단말기가 잠겼습니다. 이번 근무에는 더 입력할 수 없습니다.": [
+  "public/client.js:290"
+ ],
+ "입력이 없어 자동 퇴근되었습니다": [
+  "public/client.js:294"
+ ],
+ "근무 시간이 끝났습니다": [
+  "public/client.js:294"
+ ],
+ "관리자가 근무를 종료했습니다": [
+  "public/client.js:294"
+ ],
+ "이용이 제한되었습니다": [
+  "public/client.js:294"
+ ],
+ "근무가 종료되었습니다": [
+  "public/client.js:294"
+ ],
+ "신고가 접수되었습니다": [
+  "public/client.js:297"
+ ],
+ "요청이 거부되었습니다: {code}": [
+  "public/client.js:300"
+ ],
+ "오프라인 혼자 모드 (서버에 연결되지 않음)": [
+  "public/client.js:334"
+ ],
+ "근무자": [
+  "public/client.js:347"
+ ],
+ "연결됨": [
+  "public/client.js:489"
+ ],
+ "실험 {n}회차": [
+  "public/client.js:491"
+ ],
+ "건물 폐쇄 · 기록 열람만": [
+  "public/client.js:494"
+ ],
+ "관전 중": [
+  "public/client.js:494"
+ ],
+ "근무자가 없습니다": [
+  "public/client.js:494"
+ ],
+ "출근 대기 {n}번째": [
+  "public/client.js:495"
+ ],
+ "내 차례! 장비를 고르세요": [
+  "public/client.js:496",
+  "public/client.js:1443"
+ ],
+ "근무 중 · {equip}": [
+  "public/client.js:497"
+ ],
+ "{nick} 님이 출근 준비 중": [
+  "public/client.js:502"
+ ],
+ "근무자 없음": [
+  "public/client.js:502",
+  "public/client.js:1216",
+  "public/index.html"
+ ],
+ "(없음)": [
+  "public/client.js:503"
+ ],
+ "{day}회차 · #{id} {nick} · {equip} · 진행 {progress}": [
+  "public/client.js:512"
+ ],
+ "인수 거부됨": [
+  "public/client.js:512",
+  "public/client.js:1371"
+ ],
+ "신고": [
+  "public/client.js:518",
+  "public/index.html"
+ ],
+ "닉네임 신고": [
+  "public/client.js:518"
+ ],
+ "승인": [
+  "public/client.js:598",
+  "public/console.js:214",
+  "public/lab11.js:286",
+  "public/index.html"
+ ],
+ "인수인계 완료": [
+  "public/client.js:599"
+ ],
+ "공정 {stage}/{stages}": [
+  "public/client.js:599",
+  "public/client.js:965",
+  "public/console.js:238"
+ ],
+ "실험 종료": [
+  "public/client.js:599"
+ ],
+ "LAB {code} {lab} · 감독관 결재 완료": [
+  "public/client.js:601"
+ ],
+ "LAB {code} {lab} · 공정 {stage} 완료 · 다음 공정으로": [
+  "public/client.js:602"
+ ],
+ "LAB {code} {lab} · 실험실 종료": [
+  "public/client.js:603"
+ ],
+ "감독관에게 남길 마지막 쪽지입니다. 말 대신 그림으로. 다 그렸으면 붙이세요. 그러면 퇴근입니다.": [
+  "public/client.js:658"
+ ],
+ "관제석입니다. 번호 핀 {pins}개와 도장 {stamps}개가 지급됩니다. 지시문은 정해진 양식으로만 작성하십시오.": [
+  "public/client.js:682"
+ ],
+ "기록 중입니다. 퇴근하기 전 마지막 8초가 이 방에 남습니다.": [
+  "public/client.js:691"
+ ],
+ "흥미로운 선택입니다. 기록하겠습니다.": [
+  "public/client.js:692"
+ ],
+ "인수인계 쪽지는 N 키로 남깁니다. 다음 근무자가 이 자리에서 봅니다.": [
+  "public/client.js:698"
+ ],
+ "소리 끔": [
+  "public/client.js:730"
+ ],
+ "소리": [
+  "public/client.js:730",
+  "public/index.html"
+ ],
+ "산재 발생. 원인은 기록되지 않았습니다. 근무자 {id}번을 즉시 퇴근 처리합니다. 다음 근무자에게 알릴지는 당신의 몫입니다.": [
+  "public/client.js:769"
+ ],
+ "산재 발생: {trap}. 근무자 {id}번을 즉시 퇴근 처리합니다. 현장은 그대로 인계됩니다.": [
+  "public/client.js:770"
+ ],
+ "함정": [
+  "public/client.js:770",
+  "public/console.js:385",
+  "public/console.js:402",
+  "public/directives.js:60"
+ ],
+ "({n}초)": [
+  "public/client.js:826"
+ ],
+ "{n}초 남음": [
+  "public/client.js:838"
+ ],
+ "{n}회": [
+  "public/client.js:861",
+  "public/lab13.js:191",
+  "public/lab3.js:310"
+ ],
+ "단말기 · 기호 {n}개를 순서대로 · 남은 시도 {tries}": [
+  "public/client.js:873"
+ ],
+ "기호 {n}": [
+  "public/client.js:885"
+ ],
+ "도면 (V)": [
+  "public/client.js:960"
+ ],
+ "관제 · LAB {code} {lab}": [
+  "public/client.js:966"
+ ],
+ "서명 #{id}": [
+  "public/client.js:1087"
+ ],
+ "출근 준비 중": [
+  "public/client.js:1122"
+ ],
+ "없음": [
+  "public/client.js:1122",
+  "public/lab12.js:309",
+  "public/lab14.js:288",
+  "public/lab15.js:206",
+  "public/lab15.js:207",
+  "public/lab2.js:345",
+  "public/lab4.js:248",
+  "public/lab5.js:351",
+  "public/lab5.js:352",
+  "public/lab5.js:353",
+  "public/nightshift.js:372"
+ ],
+ "{n}초": [
+  "public/client.js:1124",
+  "public/client.js:1657"
+ ],
+ "녹화 #{id}": [
+  "public/client.js:1184"
+ ],
+ "근무 중 · 녹화는 퇴근 뒤 송출됩니다": [
+  "public/client.js:1216"
+ ],
+ "근무자 출근 준비 중": [
+  "public/client.js:1216"
+ ],
+ "{d}일 {h}시간": [
+  "public/client.js:1229"
+ ],
+ "{h}시간 {m}분": [
+  "public/client.js:1229"
+ ],
+ "{m}분": [
+  "public/client.js:1229"
+ ],
+ "근무 {shifts} · 산재 {accidents} · {span}": [
+  "public/client.js:1231"
+ ],
+ "공정표 {n}/{total}": [
+  "public/client.js:1246"
+ ],
+ "공정표 · {n}회차": [
+  "public/client.js:1248"
+ ],
+ "건물 폐쇄": [
+  "public/client.js:1248"
+ ],
+ "미공개": [
+  "public/client.js:1258"
+ ],
+ "마무리 {nick}": [
+  "public/client.js:1260",
+  "public/client.js:1330"
+ ],
+ "지금 근무 중인 방": [
+  "public/client.js:1261"
+ ],
+ "근무자 {names} 외 {n}명": [
+  "public/client.js:1270"
+ ],
+ "근무자 {names}": [
+  "public/client.js:1271"
+ ],
+ "녹화 없음": [
+  "public/client.js:1277",
+  "public/client.js:1363"
+ ],
+ "기록 보기": [
+  "public/client.js:1277"
+ ],
+ "보존": [
+  "public/client.js:1296"
+ ],
+ "감독관이 보존 표시를 해 둔 기록입니다": [
+  "public/client.js:1297"
+ ],
+ "(아직 끝난 실험실이 없습니다)": [
+  "public/client.js:1308"
+ ],
+ "{run}회차 LAB {code} {lab}": [
+  "public/client.js:1310"
+ ],
+ "열람": [
+  "public/client.js:1312"
+ ],
+ "이 방이 열린 뒤로 아직 녹화된 근무가 없습니다": [
+  "public/client.js:1321"
+ ],
+ "이 실험실의 녹화가 없습니다": [
+  "public/client.js:1321"
+ ],
+ "기록 보관소 · LAB {code} {lab}": [
+  "public/client.js:1330"
+ ],
+ "마지막으로 나간 사람 {nick}": [
+  "public/client.js:1330"
+ ],
+ "표시를 누르면 그 순간으로 갑니다": [
+  "public/client.js:1334",
+  "public/index.html"
+ ],
+ "현장 녹화 대장 · LAB {code} {lab}": [
+  "public/client.js:1340"
+ ],
+ "개방 후 {span} · 근무 {shifts} · 녹화 {tapes}": [
+  "public/client.js:1341"
+ ],
+ "앞선 녹화 {n}건은 생략": [
+  "public/client.js:1342"
+ ],
+ "근무 중": [
+  "public/client.js:1372"
+ ],
+ "마무리": [
+  "public/client.js:1373"
+ ],
+ "시간 종료": [
+  "public/client.js:1373",
+  "public/index.html"
+ ],
+ "이 방은 결재가 끝나 기록 보관소로 넘어갔습니다": [
+  "public/client.js:1424"
+ ],
+ "근무자님 차례입니다. 녹화 대장은 근무를 마친 뒤에도 열람하실 수 있습니다.": [
+  "public/client.js:1444"
+ ],
+ "단말기 입력 · 열림": [
+  "public/client.js:1472"
+ ],
+ "단말기 입력 · 1단계 통과": [
+  "public/client.js:1472"
+ ],
+ "단말기 입력 · 틀림": [
+  "public/client.js:1472"
+ ],
+ "단말기 입력 · 틀림 · 기호 교체": [
+  "public/client.js:1473"
+ ],
+ "단말기 입력 · 이미 열림": [
+  "public/client.js:1473"
+ ],
+ "단말기 입력 · 지난 발급분 · 잠김": [
+  "public/client.js:1474"
+ ],
+ "단말기 입력 · 잠김": [
+  "public/client.js:1474"
+ ],
+ "인수 거부로 무효": [
+  "public/client.js:1481"
+ ],
+ "#{id} {nick} 출근 · {equip}": [
+  "public/client.js:1484"
+ ],
+ "#{id} {nick} 산재": [
+  "public/client.js:1485"
+ ],
+ "#{id} 인수 거부 · 현장이 #{prev} 근무 시작 시점으로 되돌아감": [
+  "public/client.js:1489"
+ ],
+ "단말기 입력 · {result}": [
+  "public/client.js:1494"
+ ],
+ "{n}번 핀 · {msg}": [
+  "public/client.js:1498"
+ ],
+ "{n}번 핀 꽂음": [
+  "public/client.js:1498"
+ ],
+ "{n}번 핀 뽑음": [
+  "public/client.js:1500"
+ ],
+ "쪽지 #{id}에 「{stamp}」 도장": [
+  "public/client.js:1502",
+  "public/client.js:1510"
+ ],
+ "쪽지 #{id}의 도장 지움": [
+  "public/client.js:1502"
+ ],
+ "쪽지 #{id} · {nick}": [
+  "public/client.js:1506"
+ ],
+ "기호 교체 · 오답 누적": [
+  "public/client.js:1521"
+ ],
+ "기호 교체 · 검증 통과, 다음 검증": [
+  "public/client.js:1521"
+ ],
+ "기호 교체 · 인력 변동": [
+  "public/client.js:1521"
+ ],
+ "기호 교체": [
+  "public/client.js:1521",
+  "public/index.html"
+ ],
+ "녹화 대장": [
+  "public/client.js:1624",
+  "public/index.html"
+ ],
+ "기록": [
+  "public/client.js:1624",
+  "public/directives.js:62"
+ ],
+ "내 차례입니다. {n}초 안에 장비를 고르지 않으면 차례가 넘어갑니다": [
+  "public/client.js:1649"
+ ],
+ "{n}배": [
+  "public/client.js:1657"
+ ],
+ "정지": [
+  "public/client.js:1657"
+ ],
+ "▶ {i}/{n}번째 녹화 · #{id} {nick} · {equip}": [
+  "public/client.js:1660"
+ ],
+ "일시정지": [
+  "public/client.js:1667",
+  "public/index.html"
+ ],
+ "재생": [
+  "public/client.js:1667"
+ ],
+ "녹화 재생 중 #{id} {sec}초": [
+  "public/client.js:1709"
+ ],
+ "건물 표준시입니다. 사는 곳과 상관없이 모든 근무자가 같은 시계를 봅니다. 쪽지에 시각을 적을 때 이 시계를 쓰십시오.": [
+  "public/client.js:1714"
+ ],
+ "{nick} · {equip} 의 쪽지": [
+  "public/client.js:1771"
+ ],
+ "관제 도장 「{stamp}」": [
+  "public/client.js:1771"
+ ],
+ "이 자리에 {n}장": [
+  "public/client.js:1785"
+ ],
+ "클릭하면 한 장씩 넘겨 봅니다": [
+  "public/client.js:1786"
+ ],
+ "클릭하면 반응·신고": [
+  "public/client.js:1786",
+  "public/index.html"
+ ],
+ "신고된 쪽지입니다. 클릭하면 표시합니다.": [
+  "public/client.js:1791",
+  "public/client.js:1833"
+ ],
+ "「{stamp}」 도장 지우기": [
+  "public/client.js:1828"
+ ],
+ "「{stamp}」 도장 찍기": [
+  "public/client.js:1828"
+ ],
+ "{n}번 핀 옮기기·고치기": [
+  "public/client.js:1868"
+ ],
+ "{n}번 핀 꽂기": [
+  "public/client.js:1868"
+ ],
+ "도면에서 {n}번 핀을 꽂을 곳을 누르세요": [
+  "public/client.js:1879"
+ ],
+ "「{stamp}」 도장을 찍을 쪽지를 누르세요 (같은 도장을 다시 찍으면 지워집니다)": [
+  "public/client.js:1879"
+ ],
+ "쪽지를 눌러 주세요": [
+  "public/client.js:1885"
+ ],
+ "빈 공간을 눌러 주세요. 핀은 그 아래 바닥에 꽂힙니다": [
+  "public/client.js:1895"
+ ],
+ "점프": [
+  "public/client.js:1937",
+  "public/directives.js:58"
+ ],
+ "{n}번 핀 · 지시문": [
+  "public/client.js:1941"
+ ],
+ "색 {n}": [
+  "public/client.js:1984"
+ ],
+ "퇴근했습니다. 남은 시간 안에 다음 근무자에게 그림을 남길 수 있습니다. 퇴근한 자리에 붙습니다.": [
+  "public/client.js:1995"
+ ],
+ "관제석의 쪽지는 출입구에 붙습니다. 다음 근무자가 출근하자마자 봅니다.": [
+  "public/client.js:1997"
+ ],
+ "다음 근무자에게 남길 그림입니다. 지금 서 있는 자리에 붙습니다. 글씨보다 그림이 잘 통합니다.": [
+  "public/client.js:1998"
+ ],
+ "쪽지는 근무 중이나 퇴근 후 60초 안에만 남길 수 있습니다": [
+  "public/client.js:2005"
+ ],
+ "그림을 먼저 그려 주세요": [
+  "public/client.js:2022"
+ ],
+ "인수인계를 완료했습니다. 이제 퇴근하셔도 됩니다.": [
+  "public/client.js:2034",
+  "public/lab9.js:240"
+ ],
+ "저는 마지막 근무자가 남긴 그림을 받은 다음 근무자였습니다. 이제 압니다. 그 그림은 '퇴근해도 된다'는 뜻이었습니다. 감사합니다, 동료 여러분.": [
+  "public/client.js:2035"
+ ],
+ "실험 {n}회차 종료 · 이번 회차의 근무자": [
+  "public/client.js:2037"
+ ],
+ "동료 {nick}": [
+  "public/client.js:2041"
+ ],
+ "사용할 수 없는 이름입니다. 다른 이름을 입력해 주세요.": [
+  "public/client.js:2090"
+ ],
+ "근무자 {nick}": [
+  "public/client.js:2092"
+ ],
+ "이름을 입력해 주세요.": [
+  "public/client.js:2099"
+ ],
+ "근무 중이나 대기 중에는 이름을 바꿀 수 없습니다.": [
+  "public/client.js:2100"
+ ],
+ "{cam} · 현장 · 녹화": [
+  "public/console.js:150"
+ ],
+ "장치 상태": [
+  "public/console.js:155"
+ ],
+ "개정": [
+  "public/console.js:189"
+ ],
+ "근무": [
+  "public/console.js:190"
+ ],
+ "담당": [
+  "public/console.js:191",
+  "public/console.js:214"
+ ],
+ "사유": [
+  "public/console.js:192"
+ ],
+ "무효": [
+  "public/console.js:199"
+ ],
+ "개정 없음": [
+  "public/console.js:201"
+ ],
+ "결재": [
+  "public/console.js:209"
+ ],
+ "검토": [
+  "public/console.js:214"
+ ],
+ "미결": [
+  "public/console.js:227"
+ ],
+ "감독": [
+  "public/console.js:229"
+ ],
+ "{n}회차": [
+  "public/console.js:238"
+ ],
+ "작성 감독관": [
+  "public/console.js:239"
+ ],
+ "종료": [
+  "public/console.js:242"
+ ],
+ "이탈": [
+  "public/console.js:242"
+ ],
+ "시간": [
+  "public/console.js:242"
+ ],
+ "끊김": [
+  "public/console.js:242"
+ ],
+ "조치": [
+  "public/console.js:242"
+ ],
+ "진행": [
+  "public/console.js:273"
+ ],
+ "시간 초과율": [
+  "public/console.js:282"
+ ],
+ "오늘 근무 {shifts} · 인수 거부 {rejected}": [
+  "public/console.js:290"
+ ],
+ "미분류 문서 1건 · 판독 불가": [
+  "public/console.js:298"
+ ],
+ "{trap} 정지 · 안전 매트": [
+  "public/console.js:385"
+ ],
+ "{trap} · 상시 통전": [
+  "public/console.js:391"
+ ],
+ "{on}/{off}초": [
+  "public/console.js:400"
+ ],
+ "{sec}초 주기": [
+  "public/console.js:401"
+ ],
+ "잔상": [
+  "public/console.js:475",
+  "public/lab14.js:288",
+  "public/lab4.js:248"
+ ],
+ "확인됨": [
+  "public/directives.js:19",
+  "public/index.html"
+ ],
+ "틀림": [
+  "public/directives.js:20",
+  "public/index.html"
+ ],
+ "오래됨": [
+  "public/directives.js:21",
+  "public/index.html"
+ ],
+ "여기서 {}": [
+  "public/directives.js:44"
+ ],
+ "{} 주의": [
+  "public/directives.js:45"
+ ],
+ "{} 필요": [
+  "public/directives.js:46"
+ ],
+ "{} 금지": [
+  "public/directives.js:47",
+  "public/lab15core.js:165"
+ ],
+ "{} 먼저": [
+  "public/directives.js:48",
+  "public/lab15core.js:165"
+ ],
+ "{} 있음": [
+  "public/directives.js:49",
+  "public/lab15core.js:163",
+  "public/lab5.js:186"
+ ],
+ "{} 없음": [
+  "public/directives.js:50"
+ ],
+ "다음 근무자는 {}": [
+  "public/directives.js:51",
+  "public/lab15core.js:164",
+  "public/lab5.js:188"
+ ],
+ "{} 확인 바람": [
+  "public/directives.js:52"
+ ],
+ "장비": [
+  "public/directives.js:57"
+ ],
+ "출입 카드": [
+  "public/directives.js:57",
+  "public/engine.js:15",
+  "public/lab15core.js:130",
+  "public/lab5.js:146"
+ ],
+ "보행 보조 장치": [
+  "public/directives.js:57",
+  "public/engine.js:16",
+  "public/lab15core.js:130",
+  "public/lab5.js:146"
+ ],
+ "조명": [
+  "public/directives.js:57",
+  "public/engine.js:17",
+  "public/lab5.js:146"
+ ],
+ "잔상 기록기": [
+  "public/directives.js:57",
+  "public/engine.js:18"
+ ],
+ "관제": [
+  "public/directives.js:57",
+  "public/engine.js:21"
+ ],
+ "동작": [
+  "public/directives.js:58"
+ ],
+ "대기": [
+  "public/directives.js:58",
+  "public/lab1.js:412",
+  "public/lab1.js:420",
+  "public/lab11.js:287",
+  "public/lab11.js:300",
+  "public/lab11.js:310",
+  "public/lab12.js:271",
+  "public/lab12.js:301",
+  "public/lab12.js:310",
+  "public/lab13.js:448",
+  "public/lab13.js:457",
+  "public/lab14.js:284",
+  "public/lab14.js:295",
+  "public/lab15.js:202",
+  "public/lab15.js:209",
+  "public/lab2.js:330",
+  "public/lab2.js:331",
+  "public/lab2.js:336",
+  "public/lab2.js:346",
+  "public/lab3.js:528",
+  "public/lab3.js:540",
+  "public/lab4.js:193",
+  "public/lab4.js:239",
+  "public/lab4.js:253",
+  "public/lab5.js:344",
+  "public/lab5.js:355",
+  "public/lab9.js:378",
+  "public/nightshift.js:367",
+  "public/nightshift.js:377"
+ ],
+ "입력": [
+  "public/directives.js:58"
+ ],
+ "탑승": [
+  "public/directives.js:58"
+ ],
+ "등반": [
+  "public/directives.js:58"
+ ],
+ "후퇴": [
+  "public/directives.js:58"
+ ],
+ "서두름": [
+  "public/directives.js:58"
+ ],
+ "휴식": [
+  "public/directives.js:58"
+ ],
+ "장치": [
+  "public/directives.js:59"
+ ],
+ "문": [
+  "public/directives.js:59"
+ ],
+ "발판": [
+  "public/directives.js:59"
+ ],
+ "선반": [
+  "public/directives.js:59"
+ ],
+ "단말기": [
+  "public/directives.js:59",
+  "public/lab13.js:446",
+  "public/lab13.js:455",
+  "public/lab3.js:526",
+  "public/lab3.js:538",
+  "public/index.html",
+  "public/index.html"
+ ],
+ "레버": [
+  "public/directives.js:59"
+ ],
+ "엘리베이터": [
+  "public/directives.js:59",
+  "public/lab4.js:23",
+  "public/lab4.js:251"
+ ],
+ "버튼": [
+  "public/directives.js:59"
+ ],
+ "차단기": [
+  "public/directives.js:59",
+  "public/lab4.js:238",
+  "public/lab4.js:249"
+ ],
+ "기호 벽": [
+  "public/directives.js:59"
+ ],
+ "쪽지": [
+  "public/directives.js:59",
+  "public/index.html"
+ ],
+ "판단": [
+  "public/directives.js:60"
+ ],
+ "정답": [
+  "public/directives.js:60"
+ ],
+ "거짓": [
+  "public/directives.js:60"
+ ],
+ "지름길": [
+  "public/directives.js:60"
+ ],
+ "막다른 길": [
+  "public/directives.js:60"
+ ],
+ "시간 부족": [
+  "public/directives.js:60"
+ ],
+ "안전": [
+  "public/directives.js:60"
+ ],
+ "위험": [
+  "public/directives.js:60"
+ ],
+ "앞사람 실수": [
+  "public/directives.js:60"
+ ],
+ "순서·시간": [
+  "public/directives.js:61"
+ ],
+ "1번 핀": [
+  "public/directives.js:61"
+ ],
+ "2번 핀": [
+  "public/directives.js:61"
+ ],
+ "3번 핀": [
+  "public/directives.js:61"
+ ],
+ "10초": [
+  "public/directives.js:61"
+ ],
+ "20초": [
+  "public/directives.js:61"
+ ],
+ "30초": [
+  "public/directives.js:61"
+ ],
+ "45초": [
+  "public/directives.js:61"
+ ],
+ "기타": [
+  "public/directives.js:62"
+ ],
+ "어둠": [
+  "public/directives.js:62"
+ ],
+ "실험": [
+  "public/directives.js:62"
+ ],
+ "예산": [
+  "public/directives.js:62"
+ ],
+ "위상": [
+  "public/directives.js:64"
+ ],
+ "위상 이동기": [
+  "public/directives.js:64",
+  "public/engine.js:19",
+  "public/lab15core.js:130",
+  "public/lab5.js:146"
+ ],
+ "청 위상": [
+  "public/directives.js:64",
+  "public/lab15core.js:129",
+  "public/lab5.js:145"
+ ],
+ "적 위상": [
+  "public/directives.js:64",
+  "public/lab15core.js:129",
+  "public/lab5.js:145"
+ ],
+ "위상 닻": [
+  "public/directives.js:64",
+  "public/lab15.js:206",
+  "public/lab15core.js:165",
+  "public/lab5.js:351"
+ ],
+ "감전": [
+  "public/directives.js:64"
+ ],
+ "서명": [
+  "public/directives.js:64",
+  "public/lab5.js:31"
+ ],
+ "그리고": [
+  "public/directives.js:68"
+ ],
+ "그러나": [
+  "public/directives.js:68"
+ ],
+ "그러므로": [
+  "public/directives.js:68"
+ ],
+ "아니면": [
+  "public/directives.js:68"
+ ],
+ "그래도": [
+  "public/directives.js:68"
+ ],
+ "단말기 · 문 · 차단기": [
+  "public/engine.js:15"
+ ],
+ "높은 점프 · 4칸 선반": [
+  "public/engine.js:16"
+ ],
+ "빛 발판 · 자외선 기호": [
+  "public/engine.js:17"
+ ],
+ "마지막 8초가 남아 버튼을 누름": [
+  "public/engine.js:18"
+ ],
+ "방 위상 청↔적 (근무당 2번) · 위상 닻": [
+  "public/engine.js:19"
+ ],
+ "도면 · 번호 핀 지시문 · 쪽지 도장": [
+  "public/engine.js:21"
+ ],
+ "청": [
+  "public/engine.js:45"
+ ],
+ "적": [
+  "public/engine.js:45"
+ ],
+ "레이저": [
+  "public/engine.js:240"
+ ],
+ "프레스": [
+  "public/engine.js:240"
+ ],
+ "감전판": [
+  "public/engine.js:240"
+ ],
+ "감전 바닥": [
+  "public/engine.js:240"
+ ],
+ "피부색": [
+  "public/intro.js:9"
+ ],
+ "머리": [
+  "public/intro.js:9"
+ ],
+ "머리색": [
+  "public/intro.js:9"
+ ],
+ "표정": [
+  "public/intro.js:9"
+ ],
+ "소품": [
+  "public/intro.js:10"
+ ],
+ "모자": [
+  "public/intro.js:10"
+ ],
+ "옷": [
+  "public/intro.js:10"
+ ],
+ "옷 색": [
+  "public/intro.js:10"
+ ],
+ "이 항목만 무작위로": [
+  "public/intro.js:43"
+ ],
+ "입사": [
+  "public/lab1.js:32"
+ ],
+ "결재 순서 {order}": [
+  "public/lab1.js:209"
+ ],
+ "E: 카드 문": [
+  "public/lab1.js:210"
+ ],
+ "출입 카드 필요": [
+  "public/lab1.js:210",
+  "public/lab11.js:157",
+  "public/lab12.js:139",
+  "public/lab13.js:251",
+  "public/lab2.js:142",
+  "public/lab3.js:304",
+  "public/lab4.js:107",
+  "public/lab5.js:225",
+  "public/lab9.js:204",
+  "public/nightshift.js:141",
+  "public/nightshift.js:142",
+  "public/nightshift.js:143"
+ ],
+ "도장 {mark} 완료": [
+  "public/lab1.js:213"
+ ],
+ "E: 도장 {mark}": [
+  "public/lab1.js:214"
+ ],
+ "{equip} 전용": [
+  "public/lab1.js:214"
+ ],
+ "E: 퇴근 레버": [
+  "public/lab1.js:216",
+  "public/lab11.js:163",
+  "public/lab12.js:140",
+  "public/lab13.js:252",
+  "public/lab14.js:185",
+  "public/lab15.js:95",
+  "public/lab2.js:148",
+  "public/lab5.js:226",
+  "public/nightshift.js:144"
+ ],
+ "도장 3개 필요": [
+  "public/lab1.js:216"
+ ],
+ "카드 문은 출입 카드로만 열립니다.": [
+  "public/lab1.js:224"
+ ],
+ "도장 {mark}은 이미 찍혀 있습니다.": [
+  "public/lab1.js:229"
+ ],
+ "도장 {mark}은 {equip}만 찍을 수 있습니다. 기록하겠습니다.": [
+  "public/lab1.js:230"
+ ],
+ "서류가 부족합니다. 도장 3개가 필요합니다.": [
+  "public/lab1.js:234"
+ ],
+ "결재 순서가 아닙니다. 반려된 도장은 붉게 표시해 두겠습니다. 순서는 관제실 도면에 있습니다.": [
+  "public/lab1.js:244"
+ ],
+ "결재 순서가 아닙니다. 반려된 도장은 붉게 표시해 두겠습니다. 순서는 입구 옆 게시판에 있습니다. 가까이 가야 읽힙니다.": [
+  "public/lab1.js:245"
+ ],
+ "실험실 1 종료. 입사를 환영합니다. 오늘부터 여러분은 동료입니다.": [
+  "public/lab1.js:252"
+ ],
+ "도장 {mark} 확인. 서류가 갖춰졌습니다. 퇴근 레버가 풀렸습니다.": [
+  "public/lab1.js:256"
+ ],
+ "도장 {mark} 확인. 남은 시간은 당신의 것입니다. 다음 근무자에게 쪽지를 남겨 보십시오. (N)": [
+  "public/lab1.js:257"
+ ],
+ "도장 {mark} 확인. 남은 도장 {n}개.": [
+  "public/lab1.js:258"
+ ],
+ "카드 문이 열렸습니다. 이 문은 앞으로도 열려 있습니다.": [
+  "public/lab1.js:260"
+ ],
+ "결재 순서": [
+  "public/lab1.js:389",
+  "public/lab1.js:427",
+  "public/lab11.js:304"
+ ],
+ "관제실 문의": [
+  "public/lab1.js:391"
+ ],
+ "도장 {mark}": [
+  "public/lab1.js:409",
+  "public/lab1.js:420"
+ ],
+ "날인": [
+  "public/lab1.js:410",
+  "public/lab1.js:420"
+ ],
+ "반려": [
+  "public/lab1.js:411",
+  "public/lab1.js:420",
+  "public/lab11.js:286"
+ ],
+ "다음 차례": [
+  "public/lab1.js:412"
+ ],
+ "조도 미달": [
+  "public/lab1.js:416",
+  "public/lab11.js:291",
+  "public/lab13.js:443",
+  "public/lab3.js:518",
+  "public/lab9.js:360"
+ ],
+ "미분류 문서": [
+  "public/lab1.js:417",
+  "public/lab9.js:369"
+ ],
+ "카드 리더": [
+  "public/lab1.js:418",
+  "public/lab11.js:199",
+  "public/lab11.js:285",
+  "public/lab11.js:295"
+ ],
+ "해제": [
+  "public/lab1.js:418",
+  "public/lab1.js:421",
+  "public/lab1.js:430",
+  "public/lab13.js:440",
+  "public/lab3.js:512",
+  "public/lab5.js:337",
+  "public/lab9.js:356"
+ ],
+ "잠김": [
+  "public/lab1.js:418",
+  "public/lab1.js:421",
+  "public/lab1.js:429",
+  "public/lab1.js:430",
+  "public/lab11.js:309",
+  "public/lab12.js:305",
+  "public/lab13.js:456",
+  "public/lab2.js:342",
+  "public/lab3.js:539",
+  "public/lab9.js:377",
+  "public/nightshift.js:376"
+ ],
+ "카드 문 열림": [
+  "public/lab1.js:419"
+ ],
+ "카드 문 잠김": [
+  "public/lab1.js:419"
+ ],
+ "퇴근 레버": [
+  "public/lab1.js:421",
+  "public/lab1.js:430",
+  "public/lab11.js:300",
+  "public/lab12.js:310",
+  "public/lab13.js:448",
+  "public/lab13.js:457",
+  "public/lab14.js:284",
+  "public/lab14.js:295",
+  "public/lab15.js:202",
+  "public/lab15.js:209",
+  "public/lab2.js:346",
+  "public/lab3.js:528",
+  "public/lab3.js:540",
+  "public/lab4.js:239",
+  "public/lab4.js:253",
+  "public/lab5.js:344",
+  "public/lab5.js:355",
+  "public/nightshift.js:367"
+ ],
+ "당김": [
+  "public/lab1.js:421",
+  "public/lab1.js:430",
+  "public/lab11.js:300",
+  "public/lab11.js:310",
+  "public/lab12.js:301",
+  "public/lab12.js:310",
+  "public/lab13.js:448",
+  "public/lab13.js:457",
+  "public/lab14.js:284",
+  "public/lab14.js:295",
+  "public/lab15.js:202",
+  "public/lab15.js:209",
+  "public/lab2.js:336",
+  "public/lab2.js:346",
+  "public/lab3.js:528",
+  "public/lab3.js:540",
+  "public/lab4.js:239",
+  "public/lab4.js:253",
+  "public/lab5.js:344",
+  "public/lab5.js:355",
+  "public/nightshift.js:367",
+  "public/nightshift.js:377"
+ ],
+ "보행 보조 구간 · 4칸": [
+  "public/lab1.js:422",
+  "public/lab14.js:285",
+  "public/lab3.js:529",
+  "public/lab4.js:240",
+  "public/lab9.js:364",
+  "public/nightshift.js:369"
+ ],
+ "결재 순서판 · 관제실 문의": [
+  "public/lab1.js:424"
+ ],
+ "결재 순서판 · 가까이서만 읽힘": [
+  "public/lab1.js:424"
+ ],
+ "카드 문": [
+  "public/lab1.js:429"
+ ],
+ "열림": [
+  "public/lab1.js:429",
+  "public/lab11.js:309",
+  "public/lab12.js:305",
+  "public/lab13.js:456",
+  "public/lab14.js:291",
+  "public/lab2.js:342",
+  "public/lab3.js:539",
+  "public/lab9.js:377",
+  "public/nightshift.js:376"
+ ],
+ "교대 순서": [
+  "public/lab11.js:27"
+ ],
+ "카드 리더 반려됨": [
+  "public/lab11.js:156"
+ ],
+ "E: 카드 리더": [
+  "public/lab11.js:157"
+ ],
+ "감광기 반려됨": [
+  "public/lab11.js:160"
+ ],
+ "감광 중 {sec}/{need}초 · 가만히 비추십시오": [
+  "public/lab11.js:161"
+ ],
+ "카드 리더는 출입 카드로만 작동합니다.": [
+  "public/lab11.js:171"
+ ],
+ "카드 리더는 반려 상태입니다. 감광기 승인이 먼저입니다.": [
+  "public/lab11.js:172"
+ ],
+ "공정 2 완료. 아무도 혼자 하지 않았습니다. 그게 이 공정의 요점이었습니다.": [
+  "public/lab11.js:195"
+ ],
+ "두 장치가 순서대로 승인되었습니다. 홀 문이 열렸습니다. 다음은 보행 보조 장치입니다.": [
+  "public/lab11.js:196"
+ ],
+ "{device} 반려. 결재 순서가 아닙니다. 붉게 표시해 두겠습니다. 순서는 관제실 도면에 있습니다.": [
+  "public/lab11.js:199"
+ ],
+ "감광기": [
+  "public/lab11.js:199",
+  "public/lab11.js:285",
+  "public/lab11.js:297",
+  "public/lab11.js:298"
+ ],
+ "카드 리더 승인. 감광기 승인이 남았습니다.": [
+  "public/lab11.js:202"
+ ],
+ "감광기 승인. 카드 리더 승인이 남았습니다.": [
+  "public/lab11.js:203"
+ ],
+ "{sec}초 노출 필요": [
+  "public/lab11.js:298"
+ ],
+ "홀 문 열림": [
+  "public/lab11.js:299"
+ ],
+ "홀 문 잠김": [
+  "public/lab11.js:299"
+ ],
+ "보행 보조 구간 · 4칸 ×4": [
+  "public/lab11.js:301"
+ ],
+ "카드 리더 · 출입 카드": [
+  "public/lab11.js:305"
+ ],
+ "감광기 · 조명": [
+  "public/lab11.js:307",
+  "public/lab11.js:308"
+ ],
+ "{sec}초 노출": [
+  "public/lab11.js:308"
+ ],
+ "홀 문": [
+  "public/lab11.js:309"
+ ],
+ "퇴근 레버 · 보행 보조": [
+  "public/lab11.js:310",
+  "public/nightshift.js:377"
+ ],
+ "안전 매트": [
+  "public/lab12.js:30",
+  "public/lab12.js:232"
+ ],
+ "크레인 비어 있음": [
+  "public/lab12.js:139",
+  "public/lab2.js:143"
+ ],
+ "E: 크레인 버튼 {n} 누르기": [
+  "public/lab12.js:139",
+  "public/lab2.js:145"
+ ],
+ "E: 상자 내려놓기": [
+  "public/lab12.js:142"
+ ],
+ "여기에는 놓을 수 없음": [
+  "public/lab12.js:142",
+  "public/lab2.js:151"
+ ],
+ "E: 상자 들기": [
+  "public/lab12.js:143",
+  "public/lab2.js:153"
+ ],
+ "크레인 단말기는 출입 카드로만 조작할 수 있습니다.": [
+  "public/lab12.js:152",
+  "public/lab2.js:163"
+ ],
+ "크레인은 이번 근무에 이미 상자를 내렸습니다.": [
+  "public/lab12.js:153"
+ ],
+ "크레인은 이미 상자를 내렸습니다.": [
+  "public/lab12.js:153",
+  "public/lab12.js:169",
+  "public/lab2.js:164",
+  "public/lab2.js:188"
+ ],
+ "여기에는 상자를 놓을 수 없습니다.": [
+  "public/lab12.js:160",
+  "public/lab2.js:172"
+ ],
+ "위에 다른 상자가 있습니다.": [
+  "public/lab12.js:167"
+ ],
+ "그 자리에는 놓을 수 없습니다.": [
+  "public/lab12.js:168",
+  "public/lab2.js:187"
+ ],
+ "공정 2 완료. 작업자를 다치게 하던 프레스가 오늘은 작업 도구였습니다.": [
+  "public/lab12.js:177"
+ ],
+ "크레인 버튼 {n}: 상자가 압력판에 떨어졌습니다. 게이트 G가 열렸습니다.": [
+  "public/lab12.js:179"
+ ],
+ "게이트 G가 열렸습니다. 크레인 상자가 압력판을 누르고 있습니다.": [
+  "public/lab12.js:179"
+ ],
+ "크레인 버튼 {n}: 상자가 폐기구로 떨어졌습니다. 회수할 수 없습니다. 크레인은 이번 근무가 끝나면 새 상자를 겁니다.": [
+  "public/lab12.js:180"
+ ],
+ "크레인에 새 상자가 걸렸습니다. 버튼 배선은 그대로입니다.": [
+  "public/lab12.js:181"
+ ],
+ "안전 매트에 하중 감지. 프레스 {n}/{all}대 정지. 정지 상태는 상자를 치울 때까지 유지됩니다.": [
+  "public/lab12.js:183"
+ ],
+ "안전 매트가 비었습니다. 프레스가 다시 작동합니다.": [
+  "public/lab12.js:184"
+ ],
+ "전원 차단": [
+  "public/lab12.js:232"
+ ],
+ "매트 하중 · 정지": [
+  "public/lab12.js:232"
+ ],
+ "폐기": [
+  "public/lab12.js:249"
+ ],
+ "내림 완료": [
+  "public/lab12.js:272",
+  "public/lab2.js:330",
+  "public/lab2.js:343"
+ ],
+ "버튼 {n} · 상자 폐기": [
+  "public/lab12.js:273"
+ ],
+ "버튼 {n} · 내림 완료": [
+  "public/lab12.js:273"
+ ],
+ "압력판 P": [
+  "public/lab12.js:294",
+  "public/lab2.js:328"
+ ],
+ "하중 있음": [
+  "public/lab12.js:294"
+ ],
+ "비어 있음": [
+  "public/lab12.js:294",
+  "public/lab14.js:277",
+  "public/lab4.js:231",
+  "public/lab5.js:341",
+  "public/lab5.js:342"
+ ],
+ "크레인 단말기": [
+  "public/lab12.js:295",
+  "public/lab2.js:330"
+ ],
+ "폐기구": [
+  "public/lab12.js:298"
+ ],
+ "게이트 G 열림": [
+  "public/lab12.js:300",
+  "public/lab15.js:201",
+  "public/lab2.js:329"
+ ],
+ "게이트 G 잠김": [
+  "public/lab12.js:300",
+  "public/lab15.js:201",
+  "public/lab2.js:329"
+ ],
+ "퇴근 레버 (5칸)": [
+  "public/lab12.js:301",
+  "public/lab2.js:336"
+ ],
+ "선반 · 4칸": [
+  "public/lab12.js:302"
+ ],
+ "압력판 · 게이트 G": [
+  "public/lab12.js:305"
+ ],
+ "크레인": [
+  "public/lab12.js:306",
+  "public/lab2.js:343"
+ ],
+ "상자 대기": [
+  "public/lab12.js:306",
+  "public/lab2.js:343"
+ ],
+ "압력판 배선": [
+  "public/lab12.js:307"
+ ],
+ "버튼 {n}": [
+  "public/lab12.js:307",
+  "public/lab2.js:344"
+ ],
+ "프레스 정지": [
+  "public/lab12.js:308"
+ ],
+ "{n}/{all}대": [
+  "public/lab12.js:308"
+ ],
+ "운반 중": [
+  "public/lab12.js:309",
+  "public/lab2.js:345"
+ ],
+ "상자 1": [
+  "public/lab12.js:309",
+  "public/lab2.js:345"
+ ],
+ "갈라진 기호": [
+  "public/lab13.js:26"
+ ],
+ "단말기 잠김": [
+  "public/lab13.js:251",
+  "public/lab3.js:304"
+ ],
+ "E: 단말기": [
+  "public/lab13.js:251",
+  "public/lab3.js:304"
+ ],
+ "문 D는 이미 열려 있습니다.": [
+  "public/lab13.js:259"
+ ],
+ "단말기는 출입 카드로만 조작할 수 있습니다.": [
+  "public/lab13.js:260"
+ ],
+ "이번 근무에는 더 입력할 수 없습니다. 다음 근무자에게 넘기십시오.": [
+  "public/lab13.js:261",
+  "public/lab3.js:318"
+ ],
+ "공정 2 완료. 한 사람은 순서만, 한 사람은 기호만 보았습니다.": [
+  "public/lab13.js:280"
+ ],
+ "문 D가 열렸습니다. 입력한 근무자는 기호를 하나도 본 적이 없습니다.": [
+  "public/lab13.js:281"
+ ],
+ "검토 절차가 바뀌어 명판과 자외선 기호가 새로 발급되었습니다. 이전 쪽지는 둘 다 거짓입니다.": [
+  "public/lab13.js:284"
+ ],
+ "입력 3회 실패. 명판의 순서와 자외선 기호가 모두 바뀌었습니다. 이전 쪽지는 둘 다 거짓입니다.": [
+  "public/lab13.js:285"
+ ],
+ "이번 근무의 단말기 입력이 잠겼습니다. 틀린 추측은 근무 하나의 비용입니다.": [
+  "public/lab13.js:287",
+  "public/lab3.js:341"
+ ],
+ "입력이 틀렸습니다. 남은 시도 {n}회.": [
+  "public/lab13.js:288",
+  "public/lab3.js:342"
+ ],
+ "명판이 판독되었습니다. 순서만 있습니다.": [
+  "public/lab13.js:289"
+ ],
+ "자외선 기호가 판독되었습니다. 순서는 없습니다.": [
+  "public/lab13.js:290"
+ ],
+ "기호 {n}개: 어둠 속 자외선": [
+  "public/lab13.js:424"
+ ],
+ "순서: 높은 명판": [
+  "public/lab13.js:425"
+ ],
+ "이번 근무 잠김": [
+  "public/lab13.js:440",
+  "public/lab3.js:512"
+ ],
+ "실패 {n}/{max}": [
+  "public/lab13.js:440",
+  "public/lab3.js:512"
+ ],
+ "입력 대기": [
+  "public/lab13.js:440",
+  "public/lab3.js:512",
+  "public/lab9.js:358"
+ ],
+ "명판 판독 불가": [
+  "public/lab13.js:444"
+ ],
+ "자외선 판독 불가 {n}건": [
+  "public/lab13.js:445"
+ ],
+ "문 D 열림": [
+  "public/lab13.js:447",
+  "public/lab3.js:527",
+  "public/lab5.js:343",
+  "public/nightshift.js:366"
+ ],
+ "문 D 잠김": [
+  "public/lab13.js:447",
+  "public/lab3.js:527",
+  "public/lab5.js:226",
+  "public/lab5.js:343",
+  "public/nightshift.js:366"
+ ],
+ "보행 보조 · 4칸 명판대": [
+  "public/lab13.js:449"
+ ],
+ "명판 (순서)": [
+  "public/lab13.js:452"
+ ],
+ "판독됨": [
+  "public/lab13.js:452",
+  "public/lab13.js:453"
+ ],
+ "미판독": [
+  "public/lab13.js:452",
+  "public/lab13.js:453"
+ ],
+ "자외선 (기호)": [
+  "public/lab13.js:453"
+ ],
+ "기호 발급": [
+  "public/lab13.js:454",
+  "public/lab3.js:534"
+ ],
+ "{n}차": [
+  "public/lab13.js:454",
+  "public/lab3.js:534"
+ ],
+ "문 D": [
+  "public/lab13.js:456",
+  "public/lab3.js:539",
+  "public/nightshift.js:376"
+ ],
+ "잔상 안무": [
+  "public/lab14.js:32"
+ ],
+ "사번 판독 발판 · 근무 중인 사번만 인식합니다": [
+  "public/lab14.js:187"
+ ],
+ "발판 {n} · 퇴근 전 마지막 8초가 반복됩니다": [
+  "public/lab14.js:188"
+ ],
+ "공정 2 완료. 퇴근한 동료가 문을 잡아 주었습니다.": [
+  "public/lab14.js:198"
+ ],
+ "잔상이 기록되었습니다. 판독기가 퇴근한 사번을 인식하지 않습니다. 기록하겠습니다.": [
+  "public/lab14.js:201"
+ ],
+ "잔상이 기록되었습니다. 퇴근한 근무자가 아직 일하고 있습니다.": [
+  "public/lab14.js:202",
+  "public/lab4.js:148"
+ ],
+ "발판 {n}": [
+  "public/lab14.js:277"
+ ],
+ "눌림": [
+  "public/lab14.js:277",
+  "public/lab4.js:231",
+  "public/lab4.js:237"
+ ],
+ "사번 판독 · 퇴근자 불가": [
+  "public/lab14.js:279"
+ ],
+ "무게 감지": [
+  "public/lab14.js:279"
+ ],
+ "문 {n} 열림": [
+  "public/lab14.js:282"
+ ],
+ "문 {n} 닫힘": [
+  "public/lab14.js:282"
+ ],
+ "기록됨 · 8초 반복": [
+  "public/lab14.js:288",
+  "public/lab4.js:248"
+ ],
+ "문 1": [
+  "public/lab14.js:291"
+ ],
+ "문 2": [
+  "public/lab14.js:291"
+ ],
+ "닫힘": [
+  "public/lab14.js:291"
+ ],
+ "발판 방식": [
+  "public/lab14.js:293"
+ ],
+ "{b}번 사번 판독 · {w}번 무게": [
+  "public/lab14.js:293"
+ ],
+ "닫힘 지연": [
+  "public/lab14.js:294"
+ ],
+ "문 1 {a}초 · 문 2 {b}초": [
+  "public/lab14.js:294"
+ ],
+ "위상 낙하": [
+  "public/lab15.js:26"
+ ],
+ "E: {phase} 닻 뽑기": [
+  "public/lab15.js:98",
+  "public/lab5.js:229"
+ ],
+ "E: {phase} 닻 꽂기": [
+  "public/lab15.js:98",
+  "public/lab5.js:229"
+ ],
+ "E: 위상 전환 (남은 {n}번)": [
+  "public/lab15.js:99",
+  "public/lab5.js:230"
+ ],
+ "{phase} 위상 닻 소켓": [
+  "public/lab15.js:101",
+  "public/lab5.js:232"
+ ],
+ "이번 근무의 위상 전환을 모두 썼습니다.": [
+  "public/lab15.js:111",
+  "public/lab5.js:250",
+  "public/lab5.js:256"
+ ],
+ "이번 근무의 위상 전환을 모두 썼습니다. 상태는 그대로 다음 근무자에게 넘어갑니다.": [
+  "public/lab15.js:116"
+ ],
+ "공정 2 완료. 순서를 지킨 사람만 내려놓을 수 있었습니다.": [
+  "public/lab15.js:122"
+ ],
+ "하중 {n}/{need}. 게이트 G가 열렸습니다.": [
+  "public/lab15.js:123"
+ ],
+ "위상이 바뀌자 상자가 떨어졌습니다. 떨어진 상자는 올라가지 않습니다.": [
+  "public/lab15.js:126"
+ ],
+ "위상 닻: {phase} 고정. 그 색의 선반도 함께 고정됩니다.": [
+  "public/lab15.js:127"
+ ],
+ "위상 닻을 뽑았습니다.": [
+  "public/lab15.js:127",
+  "public/lab5.js:267"
+ ],
+ "방의 위상이 바뀌었습니다.": [
+  "public/lab15.js:128"
+ ],
+ "{phase} 위상": [
+  "public/lab15.js:172",
+  "public/lab5.js:312"
+ ],
+ "하중 {n}/{need}": [
+  "public/lab15.js:185"
+ ],
+ "닻 청": [
+  "public/lab15.js:197"
+ ],
+ "고정": [
+  "public/lab15.js:197",
+  "public/lab15.js:198",
+  "public/lab5.js:341",
+  "public/lab5.js:342"
+ ],
+ "닻 적": [
+  "public/lab15.js:198"
+ ],
+ "적 다리 있음": [
+  "public/lab15.js:200"
+ ],
+ "적 다리 없음 · 감전": [
+  "public/lab15.js:200"
+ ],
+ "방 위상": [
+  "public/lab15.js:205",
+  "public/lab5.js:350"
+ ],
+ "{phase} 고정": [
+  "public/lab15.js:206",
+  "public/lab5.js:351"
+ ],
+ "적 다리 (감전 구간)": [
+  "public/lab15.js:207"
+ ],
+ "있음": [
+  "public/lab15.js:207",
+  "public/lab5.js:352",
+  "public/lab5.js:353"
+ ],
+ "압력판 하중": [
+  "public/lab15.js:208",
+  "public/lab2.js:340"
+ ],
+ "상자": [
+  "public/lab2.js:36"
+ ],
+ "E: 크레인 {spot} 위치에 내리기": [
+  "public/lab2.js:145"
+ ],
+ "E: 광센서 비추기": [
+  "public/lab2.js:147"
+ ],
+ "E: 상자 내려놓기 · 묵직함": [
+  "public/lab2.js:151"
+ ],
+ "E: 상자 내려놓기 · 가벼움": [
+  "public/lab2.js:151"
+ ],
+ "압력판 봉인 중: 근무가 끝나면 풀림": [
+  "public/lab2.js:153"
+ ],
+ "상자를 들었습니다. 묵직합니다.": [
+  "public/lab2.js:183"
+ ],
+ "상자를 들었습니다. 가볍습니다.": [
+  "public/lab2.js:183"
+ ],
+ "압력판이 봉인되어 있어 상자를 들 수 없습니다. 이번 근무가 끝나면 풀립니다.": [
+  "public/lab2.js:185"
+ ],
+ "위에 다른 상자가 있습니다. 위의 것부터 옮기십시오.": [
+  "public/lab2.js:186"
+ ],
+ "광센서 작동. 크레인이 기본 위치에 상자를 내렸습니다. 위치는 고를 수 없었습니다.": [
+  "public/lab2.js:189"
+ ],
+ "실험실 2 종료. 상자는 그 자리에 두십시오. 다음 실험에도 쓸지 모릅니다.": [
+  "public/lab2.js:196"
+ ],
+ "압력판이 규격 미달 하중을 감지했습니다. 이번 근무가 끝날 때까지 압력판을 봉인합니다.": [
+  "public/lab2.js:197"
+ ],
+ "압력판 봉인이 풀렸습니다. 하중이 충분해 게이트 G가 다시 열렸습니다.": [
+  "public/lab2.js:198"
+ ],
+ "압력판 봉인이 풀렸습니다. 올려 둔 상자는 그대로 있습니다.": [
+  "public/lab2.js:198"
+ ],
+ "하중 {load}/{need}. 게이트 G가 열렸습니다. 상자를 치우지 않는 한 계속 열려 있습니다.": [
+  "public/lab2.js:199"
+ ],
+ "게이트 G가 닫혔습니다. 압력판의 하중이 줄었습니다.": [
+  "public/lab2.js:200"
+ ],
+ "하중 {load}/{need}. 인력이 충원되어 하중 기준이 올랐습니다.": [
+  "public/lab2.js:201"
+ ],
+ "크레인이 레버 아래에 상자를 내렸습니다. 다음 근무자는 올라가기만 하면 됩니다.": [
+  "public/lab2.js:204"
+ ],
+ "크레인이 상자를 내렸습니다.": [
+  "public/lab2.js:204"
+ ],
+ "하중 {load}/{need}": [
+  "public/lab2.js:254",
+  "public/lab2.js:323"
+ ],
+ "봉인": [
+  "public/lab2.js:257",
+  "public/lab2.js:328"
+ ],
+ "광센서 기본": [
+  "public/lab2.js:303"
+ ],
+ "적재": [
+  "public/lab2.js:311"
+ ],
+ "빈 상자": [
+  "public/lab2.js:311"
+ ],
+ "광센서": [
+  "public/lab2.js:331"
+ ],
+ "보관 선반 · 4칸": [
+  "public/lab2.js:337"
+ ],
+ "봉인 {load}/{need}": [
+  "public/lab2.js:340"
+ ],
+ "상자 무게 (왼쪽부터 ●적재 ○빈)": [
+  "public/lab2.js:341"
+ ],
+ "게이트 G": [
+  "public/lab2.js:342"
+ ],
+ "레버 아래 배선": [
+  "public/lab2.js:344"
+ ],
+ "기호": [
+  "public/lab3.js:28"
+ ],
+ "E: 레버": [
+  "public/lab3.js:305",
+  "public/lab4.js:110"
+ ],
+ "0회 · 이번 근무 잠김": [
+  "public/lab3.js:310",
+  "public/lab9.js:161"
+ ],
+ "문은 이미 열려 있습니다.": [
+  "public/lab3.js:316"
+ ],
+ "단말기는 출입 카드로만 조작할 수 있습니다. 기록하겠습니다.": [
+  "public/lab3.js:317"
+ ],
+ "검증 {done}/{need} 통과. 인력이 충원되어 검증을 한 번 더 합니다. 새 기호가 표시됩니다.": [
+  "public/lab3.js:337"
+ ],
+ "입력 3회 실패. 오래된 줄 위에 새 기호를 덧칠했습니다. 방금까지의 기호는 이제 지난 발급분입니다.": [
+  "public/lab3.js:339"
+ ],
+ "입력한 기호는 지난 발급분입니다. 벽에 남아 있었을 뿐입니다. 이번 근무의 단말기를 잠급니다.": [
+  "public/lab3.js:340"
+ ],
+ "문이 열렸습니다. 입력한 근무자는 기호를 본 적이 없습니다. 흥미롭군요.": [
+  "public/lab3.js:343"
+ ],
+ "기호가 확인되었습니다. 다음 근무자에게 전달될지는 모르겠습니다.": [
+  "public/lab3.js:344"
+ ],
+ "실험실 3 종료. 결과를 기록합니다.": [
+  "public/lab3.js:345"
+ ],
+ "판독 불가 {n}건": [
+  "public/lab3.js:519",
+  "public/lab9.js:369"
+ ],
+ "검사: 아래 줄": [
+  "public/lab3.js:524"
+ ],
+ "검사: 위 줄": [
+  "public/lab3.js:524"
+ ],
+ "자외선 표시": [
+  "public/lab3.js:532"
+ ],
+ "판독 불가 · {n}줄": [
+  "public/lab3.js:532"
+ ],
+ "검사 줄": [
+  "public/lab3.js:536"
+ ],
+ "점 {n}개 · {row}": [
+  "public/lab3.js:536"
+ ],
+ "아래 줄": [
+  "public/lab3.js:536"
+ ],
+ "위 줄": [
+  "public/lab3.js:536"
+ ],
+ "검증": [
+  "public/lab3.js:537"
+ ],
+ "{done}/{need}회": [
+  "public/lab3.js:537"
+ ],
+ "E: 차단기 내리기": [
+  "public/lab4.js:108"
+ ],
+ "E: 차단기 올리기": [
+  "public/lab4.js:108"
+ ],
+ "안전 버튼: 반대쪽 버튼도 눌려야 합니다": [
+  "public/lab4.js:115"
+ ],
+ "안전 버튼: 전원이 없습니다": [
+  "public/lab4.js:116"
+ ],
+ "엘리베이터 운행 중": [
+  "public/lab4.js:117"
+ ],
+ "호출 중…": [
+  "public/lab4.js:118"
+ ],
+ "차단기는 출입 카드로만 조작할 수 있습니다. 기록하겠습니다.": [
+  "public/lab4.js:127"
+ ],
+ "엘리베이터를 호출했습니다. 도착 시각은 1층 전광판에 표시됩니다. 다음 근무자에게 전달하십시오.": [
+  "public/lab4.js:147"
+ ],
+ "전원이 들어왔습니다. 안전 규정상 버튼은 두 사람이 눌러야 합니다.": [
+  "public/lab4.js:149"
+ ],
+ "실험실 4 종료. 결과를 기록합니다.": [
+  "public/lab4.js:150"
+ ],
+ "탑승 {sec}": [
+  "public/lab4.js:194"
+ ],
+ "도착 {time}": [
+  "public/lab4.js:196",
+  "public/lab4.js:243"
+ ],
+ "상승": [
+  "public/lab4.js:197",
+  "public/lab4.js:213"
+ ],
+ "위층 정차": [
+  "public/lab4.js:212"
+ ],
+ "출발": [
+  "public/lab4.js:212"
+ ],
+ "이동 중": [
+  "public/lab4.js:212"
+ ],
+ "하강": [
+  "public/lab4.js:213"
+ ],
+ "1층 탑승 가능": [
+  "public/lab4.js:213"
+ ],
+ "도착 지연": [
+  "public/lab4.js:228"
+ ],
+ "호출 후 {sec}초": [
+  "public/lab4.js:228"
+ ],
+ "탑승 {sec}초 남음": [
+  "public/lab4.js:229"
+ ],
+ "도착 예정 {time}": [
+  "public/lab4.js:230"
+ ],
+ "승강기": [
+  "public/lab4.js:236"
+ ],
+ "지연 {sec}초": [
+  "public/lab4.js:243"
+ ],
+ "버튼 B1 · B2": [
+  "public/lab4.js:250"
+ ],
+ "E: 서명 ({n}/{need})": [
+  "public/lab5.js:225"
+ ],
+ "서명은 출입 카드로만 할 수 있습니다.": [
+  "public/lab5.js:240"
+ ],
+ "문 D가 잠겨 있습니다. 어떻게 여기까지 오셨는지 기록하겠습니다.": [
+  "public/lab5.js:244"
+ ],
+ "이 근무자는 이미 서명했습니다. 다음 출입 카드 근무자가 필요합니다.": [
+  "public/lab5.js:257"
+ ],
+ "실험실 5 종료. 지시의 서명을 근무 기록과 대조하셨기를 바랍니다.": [
+  "public/lab5.js:264"
+ ],
+ "문 D가 열렸습니다. 서명이 갖춰졌습니다.": [
+  "public/lab5.js:265"
+ ],
+ "서명 {n}/{need}. 인력이 충원되어 서명이 더 필요합니다. 다른 출입 카드 근무자가 서명하십시오.": [
+  "public/lab5.js:266"
+ ],
+ "위상 닻: {phase} 고정. 그 색은 어느 위상에서도 남습니다.": [
+  "public/lab5.js:267"
+ ],
+ "방의 위상이 바뀌었습니다. 어느 쪽인지 다음 근무자에게 알릴지는 당신의 몫입니다.": [
+  "public/lab5.js:269"
+ ],
+ "지시 서명은 근무 기록과 대조할 것": [
+  "public/lab5.js:314"
+ ],
+ "서명 {n}/{need}": [
+  "public/lab5.js:337"
+ ],
+ "서명 단말기": [
+  "public/lab5.js:340"
+ ],
+ "닻 소켓 청": [
+  "public/lab5.js:341"
+ ],
+ "닻 소켓 적": [
+  "public/lab5.js:342"
+ ],
+ "청 발판 있음": [
+  "public/lab5.js:346"
+ ],
+ "청 발판 없음 · 감전": [
+  "public/lab5.js:346"
+ ],
+ "적 발판 있음": [
+  "public/lab5.js:347"
+ ],
+ "적 발판 없음": [
+  "public/lab5.js:347"
+ ],
+ "청 발판 (감전 구간)": [
+  "public/lab5.js:352"
+ ],
+ "적 발판": [
+  "public/lab5.js:353"
+ ],
+ "문 D 서명": [
+  "public/lab5.js:354"
+ ],
+ "1회 · 틀리면 이번 근무 동안 잠김": [
+  "public/lab9.js:161"
+ ],
+ "출구 단말기 잠김 · 다음 근무에 풀림": [
+  "public/lab9.js:203"
+ ],
+ "E: 출구 단말기": [
+  "public/lab9.js:204"
+ ],
+ "→ 퇴근": [
+  "public/lab9.js:205"
+ ],
+ "문은 열려 있습니다.": [
+  "public/lab9.js:213"
+ ],
+ "출구 단말기는 출입 카드로만 조작할 수 있습니다.": [
+  "public/lab9.js:214"
+ ],
+ "출구 단말기는 이번 근무 동안 잠겨 있습니다. 다음 근무자에게 넘기십시오.": [
+  "public/lab9.js:215"
+ ],
+ "출구가 열렸습니다. 그 그림은 처음부터 이 문을 가리키고 있었습니다.": [
+  "public/lab9.js:241"
+ ],
+ "이 표시의 의미를 아는 근무자가 있습니까? 실험실 1 기록에 보존 표시를 해 두었습니다.": [
+  "public/lab9.js:243"
+ ],
+ "틀렸습니다. 오답이 두 번 쌓여 쪽지 조각을 새것으로 바꿔 걸었습니다. 이전 조각을 옮겨 그린 쪽지는 이제 틀립니다. 단말기는 이번 근무 동안 잠깁니다.": [
+  "public/lab9.js:244"
+ ],
+ "틀렸습니다. 이번 근무 동안 출구 단말기를 잠급니다. 저도 그 그림을 오래 보았습니다. 아직 모르겠습니다.": [
+  "public/lab9.js:245"
+ ],
+ "잠김 · 오입력 {n}회": [
+  "public/lab9.js:357"
+ ],
+ "오입력 {n}회": [
+  "public/lab9.js:358"
+ ],
+ "미분류 문서 {mark}": [
+  "public/lab9.js:361"
+ ],
+ "출구 단말기": [
+  "public/lab9.js:362",
+  "public/lab9.js:374"
+ ],
+ "출구 열림": [
+  "public/lab9.js:363"
+ ],
+ "출구 잠김": [
+  "public/lab9.js:363"
+ ],
+ "미분류 표시": [
+  "public/lab9.js:371"
+ ],
+ "실험실 1 결재 도장 ①②③": [
+  "public/lab9.js:371"
+ ],
+ "쪽지 교체": [
+  "public/lab9.js:373"
+ ],
+ "{gen}번째 쪽지 · 교체까지 오답 {n}회": [
+  "public/lab9.js:373"
+ ],
+ "마지막 오입력": [
+  "public/lab9.js:376"
+ ],
+ "출구": [
+  "public/lab9.js:377"
+ ],
+ "완료": [
+  "public/lab9.js:378"
+ ],
+ "E: 비상 정비 · 같은 발판을 다시 겁니다": [
+  "public/nightshift.js:141"
+ ],
+ "E: 정비 윈치 · 새 발판을 겁니다": [
+  "public/nightshift.js:142"
+ ],
+ "E: 문 D 열기": [
+  "public/nightshift.js:143"
+ ],
+ "윈치는 출입 카드로만 작동합니다.": [
+  "public/nightshift.js:152"
+ ],
+ "문 D는 출입 카드로만 열립니다.": [
+  "public/nightshift.js:156"
+ ],
+ "검사표 · 정비 {n}차: {list}번 발판 불합격. 이 검사표를 본 사람은 당신뿐입니다.": [
+  "public/nightshift.js:203"
+ ],
+ "비상 정비 완료. 떨어진 발판을 같은 자리에 다시 걸었습니다. 검사는 생략했습니다.": [
+  "public/nightshift.js:205"
+ ],
+ "실험실 6 종료. 다리는 건널 때마다 닳았고, 누군가 매번 다시 걸었습니다.": [
+  "public/nightshift.js:214"
+ ],
+ "공정 2 완료. 점검표는 끝내 아무도 받지 못했습니다. 그래도 규칙은 인계되었습니다.": [
+  "public/nightshift.js:214"
+ ],
+ "문 D가 열렸습니다. 안전 연동에 따라 낙하 발판을 모두 내렸습니다.": [
+  "public/nightshift.js:216"
+ ],
+ "낙하 발판을 다시 걸었습니다. 정비 {n}차.": [
+  "public/nightshift.js:217"
+ ],
+ "낙하 발판입니다. 밟은 발판은 잠시 흔들린 뒤 떨어지고, 불량품은 그 자리에서 떨어집니다.": [
+  "public/nightshift.js:221"
+ ],
+ "정비 {n}차": [
+  "public/nightshift.js:323",
+  "public/nightshift.js:374"
+ ],
+ "정기 점검 매분 00초 · 다음 {time}": [
+  "public/nightshift.js:331",
+  "public/nightshift.js:361"
+ ],
+ "불량 {list}": [
+  "public/nightshift.js:357"
+ ],
+ "불량 없음": [
+  "public/nightshift.js:357"
+ ],
+ "매분 00초 {n}칸 이동": [
+  "public/nightshift.js:359"
+ ],
+ "비상 윈치": [
+  "public/nightshift.js:363"
+ ],
+ "정비 윈치": [
+  "public/nightshift.js:364",
+  "public/nightshift.js:374"
+ ],
+ "빛 발판 · 조명": [
+  "public/nightshift.js:368"
+ ],
+ "낙하 발판": [
+  "public/nightshift.js:371"
+ ],
+ "{up}/{n} 남음": [
+  "public/nightshift.js:371"
+ ],
+ "불량 발판": [
+  "public/nightshift.js:372"
+ ],
+ "정기 점검": [
+  "public/nightshift.js:375",
+  "public/nightshift.js:441"
+ ],
+ "매분 00초 · {n}칸": [
+  "public/nightshift.js:375"
+ ],
+ "야간 교대": [
+  "public/nightshift.js:441"
+ ],
+ "인수인계 실험": [
+  "public/index.html"
+ ],
+ "연결 중": [
+  "public/index.html"
+ ],
+ "▶ 녹화 재생": [
+  "public/index.html"
+ ],
+ "공정표": [
+  "public/index.html",
+  "public/index.html"
+ ],
+ "일지": [
+  "public/index.html"
+ ],
+ "출근 대기": [
+  "public/index.html"
+ ],
+ "대기 취소": [
+  "public/index.html"
+ ],
+ "✎ 쪽지 남기기 (N)": [
+  "public/index.html"
+ ],
+ "←→ 이동 · Space 점프 · E 조작 · N 쪽지 남기기": [
+  "public/index.html"
+ ],
+ "핀": [
+  "public/index.html",
+  "public/index.html"
+ ],
+ "도장": [
+  "public/index.html",
+  "public/index.html"
+ ],
+ "지시문": [
+  "public/index.html"
+ ],
+ "감독관 ▸ 정해진 양식으로만 작성하십시오.": [
+  "public/index.html"
+ ],
+ "이어 쓰기": [
+  "public/index.html"
+ ],
+ "핀 꽂기": [
+  "public/index.html"
+ ],
+ "글 없이 꽂기": [
+  "public/index.html"
+ ],
+ "이 핀 뽑기": [
+  "public/index.html"
+ ],
+ "취소": [
+  "public/index.html"
+ ],
+ "끝낸 방은 결재되어 기록 보관소에 들어갑니다. 「기록 보기」로 그 방의 근무를 처음부터 빨리감기로 봅니다.": [
+  "public/index.html"
+ ],
+ "닫기 (M)": [
+  "public/index.html"
+ ],
+ "근무자 등록 신청서 · 인수인계 실험": [
+  "public/index.html"
+ ],
+ "감독관 ▸ 이름을 입력하고 출입증 사진을 찍으십시오. 이 이름과 사진은 근무일지에 영구히 남습니다.": [
+  "public/index.html"
+ ],
+ "출입증 · 지하 연구 시설": [
+  "public/index.html"
+ ],
+ "성명": [
+  "public/index.html"
+ ],
+ "소속": [
+  "public/index.html"
+ ],
+ "인수인계 실험 · 현장 근무": [
+  "public/index.html"
+ ],
+ "근무자 번호": [
+  "public/index.html"
+ ],
+ "발급 대기": [
+  "public/index.html"
+ ],
+ "🎲 전부 무작위": [
+  "public/index.html"
+ ],
+ "등록": [
+  "public/index.html"
+ ],
+ "근무는 60초입니다. 근무 중이나 퇴근 뒤 60초 안에 다음 근무자에게 그림 쪽지를 남길 수 있습니다(N 키).": [
+  "public/index.html"
+ ],
+ "등록하지 않아도 CCTV로 관전할 수 있습니다. 출근하려면 등록해야 합니다.": [
+  "public/index.html"
+ ],
+ "관전만 하기": [
+  "public/index.html"
+ ],
+ "내 차례입니다. 지급 장비를 고르세요": [
+  "public/index.html"
+ ],
+ "인수 거부: 직전 근무를 무효로 하고 시작": [
+  "public/index.html"
+ ],
+ "지우기": [
+  "public/index.html",
+  "public/index.html"
+ ],
+ "닫기 (E)": [
+  "public/index.html"
+ ],
+ "인수인계 쪽지 · 근무당 1장": [
+  "public/index.html"
+ ],
+ "붙이기": [
+  "public/index.html"
+ ],
+ "버리기": [
+  "public/index.html"
+ ],
+ "마우스로 그리고 「붙이기」. 그려 둔 쪽지는 퇴근하거나 시간이 끝나면 자동으로 붙습니다.": [
+  "public/index.html"
+ ],
+ "도움됨": [
+  "public/index.html"
+ ],
+ "웃김": [
+  "public/index.html"
+ ],
+ "닫기": [
+  "public/index.html",
+  "public/index.html",
+  "public/index.html",
+  "public/index.html"
+ ],
+ "기록 보관소": [
+  "public/index.html",
+  "public/index.html"
+ ],
+ "되돌림": [
+  "public/index.html"
+ ],
+ "장비 고르러 가기": [
+  "public/index.html"
+ ],
+ "◀ 이전 근무": [
+  "public/index.html"
+ ],
+ "다음 근무 ▶": [
+  "public/index.html"
+ ],
+ "1배": [
+  "public/index.html"
+ ],
+ "8배": [
+  "public/index.html"
+ ],
+ "32배": [
+  "public/index.html"
+ ],
+ "글꼴: 갈무리 Galmuri © Lee Minseo, SIL Open Font License 1.1 (": [
+  "public/index.html"
+ ],
+ "전문": [
+  "public/index.html"
+ ],
+ ") · 3D 모델: Kenney, Quaternius (CC0)": [
+  "public/index.html"
+ ],
+ "현장 ·": [
+  "public/index.html"
+ ],
+ "· 접속": [
+  "public/index.html"
+ ],
+ "출근 대기열": [
+  "public/index.html"
+ ],
+ "근무일지": [
+  "public/index.html"
+ ],
+ "지난 근무의 녹화를 처음부터 다시 봅니다": [
+  "public/index.html"
+ ],
+ "이 방이 열린 뒤의 근무 녹화를 사건 표시와 함께 열람합니다 (대기·관전 중)": [
+  "public/index.html"
+ ],
+ "M: 이번 회차의 공정표 (끝낸 방과 기록)": [
+  "public/index.html"
+ ],
+ "V: 도면과 CCTV 바꾸기": [
+  "public/index.html"
+ ],
+ "소리 켜기 · 끄기": [
+  "public/index.html"
+ ],
+ "이름 바꾸기": [
+  "public/index.html"
+ ],
+ "N: 다음 근무자에게 그림 쪽지 남기기": [
+  "public/index.html"
+ ],
+ "양식": [
+  "public/index.html"
+ ],
+ "단어": [
+  "public/index.html"
+ ],
+ "접속어": [
+  "public/index.html"
+ ],
+ "양식 2": [
+  "public/index.html"
+ ],
+ "단어 2": [
+  "public/index.html"
+ ],
+ "이름 (12자까지)": [
+  "public/index.html"
+ ],
+ "근무자 이름": [
+  "public/index.html"
+ ],
+ "이 자리의 이전 쪽지": [
+  "public/index.html"
+ ],
+ "이 자리의 다음 쪽지": [
+  "public/index.html"
+ ],
+ "근무자 명단": [
+  "public/index.html"
+ ],
+ "사건 표시줄": [
+  "public/index.html"
+ ]
+}
